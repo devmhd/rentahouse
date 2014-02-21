@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+
+
+  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <![endif]-->
+            <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Rent-A-House</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="browse.html"><i class="fa fa-eye left small"></i>Browse Ads</a></li>
+            <li class="active" ><a href="newad.html"><i class="fa fa-thumb-tack left small"></i>Post Ad</a></li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bookmark left small"></i>My Bookmarks <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="singlead.html">Ad 1</a></li>
+                <li><a href="singlead.html">Ad 2</a></li>
+                <li><a href="singlead.html">Ad 3</a></li>
+
+              </ul>
+            </li>
+
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ul left small"></i>My Ads <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="singlead.html">Ad 1</a></li>
+                <li><a href="singlead.html">Ad 2</a></li>
+                <li><a href="singlead.html">Ad 3</a></li>
+
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user left small"></i>Mr User <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Logout</a></li>
+
+
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+
+            <div class="page container">
+              <h1>Post A New Ad</h1>
+
+              <div class="formsection row">
+                <div class="col-md-12">
+                 <input type="text" class="form-control" placeholder="Short Address (will be used as the title)">
+               </div>
+             </div>
+
+
+             <div class="formsection row">
+              <div class="col-md-12">
+                <h2>Select Location</h2>
+              </div>
+
+
+              <div class="col-md-6">
+               <select class="form-control">
+                <option>Select Region</option>
+                <option>Dhaka</option>
+                <option>Chittagong</option>
+                <option>Rajshahi</option>
+                <option>Khulna</option>
+                <option>Sylhet</option>
+              </select>
+
+              <select class="form-control">
+               <option>Select Area</option>
+               <option>Motijheel</option>
+               <option>Badda</option>
+               <option>Gulshan</option>
+               <option>Khilgaon</option>
+               <option>Mirpur</option>
+             </select>
+
+             <select class="form-control">
+              <option>Select Neighbourhood</option>
+              <option>Arambagh</option>
+              <option>Gopibagh</option>
+              <option>RK Mission Road</option>
+              <option>Tikatuli</option>
+              <option>AGB Colony</option>
+            </select>
+
+            <textarea class="form-control" rows="5" placeholder="Write the full and detailed address"></textarea>
+
+          </div>
+
+          <div class="col-md-6">
+            <div id="gmap_canvas">
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div class="formsection row">
+         <div class="col-md-12">
+          <h2>House Details</h2>
+        </div>
+
+        <div class="col-md-6">
+          <select class="form-control">
+            <option>Select number of bedrooms</option>
+            <option>1 bedroom</option>
+            <option>2 bedrooms</option>
+            <option>3 bedrooms</option>
+            <option>4 bedrooms</option>
+            <option>5 or more bedrooms</option>
+          </select>
+
+          <select class="form-control">
+            <option>Select number of bathrooms</option>
+            <option>1 bathroom</option>
+            <option>2 bathrooms</option>
+            <option>3 bathrooms</option>
+            <option>4 bathrooms</option>
+            <option>5 or more bathrooms</option>
+          </select>
+          
+
+          
+
+
+          <select class="form-control">
+            <option>Select number of living rooms</option>
+            <option>1 living room</option>
+            <option>2 living rooms</option>
+            <option>3 living rooms</option>
+            <option>4 living rooms</option>
+            <option>5 or more living rooms</option>
+          </select>
+
+          <select class="form-control">
+            <option>Select number of balconies</option>
+            <option>1 balcony</option>
+            <option>2 balconies</option>
+            <option>3 balconies</option>
+            <option>4 balconies</option>
+            <option>5 or more balconies</option>
+          </select>
+
+          <select class="form-control">
+            <option>Dining Space?</option>
+            <option>No seperate dining space</option>
+            <option>Has a seperate dining space</option>
+            <option>More than one dining space</option>
+          </select>
+          
+
+
+        </div>
+
+        <div class="col-md-6">
+          <textarea rows="5" placeholder="(Optional) Describe the place" class="form-control"></textarea>
+
+          <div class="input-group">
+
+            <input type="text" class="form-control" placeholder="Area">
+            <span class="input-group-addon">square feet</span>
+          </div>
+        </div>
+
+        
+        
+      </div>
+
+      <div class="formsection row">
+        <div class="col-md-3"></div>
+        <div class="priceinput-wrap col-md-6">
+          <div class="priceinput">
+            <h3>Rent per month</h3>
+            <div class="input-group">
+              <span class="input-group-addon">Tk.</span>
+              <input type="text" class="form-control" placeholder="">
+              <span class="input-group-addon">/month</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+
+      <div class="formsection row">
+       <div class="col-md-12">
+        <h2>Add photos</h2>
+        <hr>
+
+
+        <div class="upload-gallery col-md-12">
+
+
+       <!--    <div class="upload-gallery-single row">
+            <div class="col-md-3">
+              <img id="thum" src="img/slide1.jpg">
+            </div>
+            <div class="col-md-9">
+              <textarea class="form-control" placeholder="Small description of the photo; eg. The spacious living room"></textarea>
+            </div>
+          </div> -->
+
+
+
+
+<!-- 
+          <div class="upload-gallery-single row">
+            <div class="col-md-3">
+              <img src="img/slide1.jpg">
+            </div>
+            <div class="col-md-9">
+              <textarea class="form-control" placeholder="Small description of the photo; eg. The spacious living room"></textarea>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="col-md-12">
+          <div class="col-md-12">
+          <label for="fileinput" class="col-md-6">
+          <img src="img/addBtn.png" alt="">
+          <input style="display:none" type="file" name="imgthumb" id="fileinput" class="form-control"/>
+        </label>
+            
+
+          </div>
+        </div>
+
+      </div>
+      </div>
+      <hr>
+      <div class="formsection row">
+        <div class="col-md-12">
+          <button class="btn btn-lg btn-primary">Submit Ad</button>
+        </div>
+      </div>
+
+      </div>
+
+
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+      <script src="js/vendor/bootstrap.min.js"></script>
+
+      <script src="js/plugins.js"></script>
+      <script src="js/main.js"></script>
+
+      <script>
+        function handleFileSelect(evt) {
+          var files = evt.target.files;
+
+          for (var i = 0, f; f = files[i]; i++) {
+
+            if (!f.type.match('image.*')) {
+              alert("Only images are allowed");
+              continue;
+            }
+            var reader = new FileReader();
+
+            reader.onload = (function(theFile) {
+              return function(e) {
+
+                var html = "<div class='upload-gallery-single row'><div class='col-md-3'><img class='just-uploaded' src='" + e.target.result + "'></div><div class='col-md-9'><textarea class='form-control' placeholder='Small description of the photo; eg. The spacious living room'></textarea></div></div>";
+
+          //alert(html);
+
+                $('.upload-gallery').append(html);
+
+              };
+            })(f);
+
+            reader.readAsDataURL(f);
+          }
+        }
+
+        document.getElementById('fileinput').addEventListener('change', handleFileSelect, false);
+
+      </script>
+
+
+      <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCvgZQ5HN2GV_e-yG-D0msw7A59R2si3zY&sensor=false">
+      </script>
+
+      <script>
+
+        var map;
+        var marker;
+        function initialize()
+        {
+          var markerInitPos = new google.maps.LatLng(55.3, 44.5);
+          var mapProp = {
+            disableDoubleClickZoom: true,
+            center:new google.maps.LatLng(23.8, 90.2),
+            zoom:7,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          map=new google.maps.Map(document.getElementById("gmap_canvas"),mapProp);
+
+
+          marker = new google.maps.Marker({
+            position: markerInitPos,
+            map: map
+          });
+
+          google.maps.event.addListener(map, 'dblclick', function(event) {
+            placeMarker(event.latLng);
+
+          });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+
+        function placeMarker(location) {
+
+         marker.setPosition(location);
+
+
+  // document.theForm.lat.value= location.lat();
+  // document.theForm.lng.value= location.lng();
+
+  // document.getElementById('latbox').innerHTML = location.lat();
+  // document.getElementById('lngbox').innerHTML = location.lng();
+
+  //map.setCenter(location);
+}
+</script>
+
+
+
+</body>
+</html>

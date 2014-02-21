@@ -46,6 +46,7 @@
 
    // font-family: MerriSansLight, sans-serif;
     padding-top: 48px;
+    padding-bottom: 100px;
     background-color: #eddbe5;
 
   }
@@ -81,6 +82,10 @@
 
     background-color: white;
     box-shadow: 0px 0px 12px -1px;
+  }
+
+  .page.container{
+    padding-bottom: 50px;
   }
 
   .navbar .container, .jumbocontainer{
@@ -316,6 +321,18 @@ background-color: #eee;
   box-shadow: 0px 0px 2px 0px gray;
 }
 
+
+
+
+.ad_desc p{
+  font-size: 1.2em;
+  font-family: OpenSans, sans-serif 
+}
+
+.adcontent{
+  margin-top: 40px;
+}
+
 h2.fulladdress{
   display: inline-block;
   margin: 0 20px 0 0;
@@ -364,4 +381,38 @@ img.media-object{
 .comment{
   margin-left: 0;
   padding: 15px
+}
+
+.formsection .form-control{
+  margin: 20px 0px;
+}
+
+.formsection .upload-gallery-single .form-control{
+  margin: 0;
+}
+
+.formsection .input-group .form-control{
+  margin: 0;
+}
+
+#gmap_canvas{
+  box-shadow: 2px 2px 10px -3px gray;
+  height: 300px;
+  width: 500px;
+}
+
+
+
+.priceinput{
+  background: #ddd;
+padding: 10px;
+border-radius: 10px;
+}
+
+.upload-gallery-single{
+  margin: 10px 0
+}
+
+img.just-uploaded{
+  box-shadow: 2px 2px 5px -1px
 }

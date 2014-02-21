@@ -45,90 +45,60 @@
 
 
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Rent-A-House</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#about">
-                            <i class="fa fa-eye left small"></i>Browse Ads</a>
-                    </li>
-                    <li>
-                        <a href="#contact">
-                            <i class="fa fa-thumb-tack left small"></i>Post Ad</a>
-                    </li>
-
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bookmark left small"></i>My Bookmarks
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">Ad 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Ad 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Ad 3</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-list-ul left small"></i>My Ads
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">Ad 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Ad 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Ad 3</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-user left small"></i>Mr User
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">Logout</a>
-                            </li>
-
-
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!--/.navbar-collapse -->
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Rent-A-House</a>
         </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="browse.html"><i class="fa fa-eye left small"></i>Browse Ads</a></li>
+            <li><a href="newad.html"><i class="fa fa-thumb-tack left small"></i>Post Ad</a></li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bookmark left small"></i>My Bookmarks <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="singlead.html">Ad 1</a></li>
+                <li><a href="singlead.html">Ad 2</a></li>
+                <li><a href="singlead.html">Ad 3</a></li>
+
+              </ul>
+            </li>
+
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ul left small"></i>My Ads <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="singlead.html">Ad 1</a></li>
+                <li><a href="singlead.html">Ad 2</a></li>
+                <li><a href="singlead.html">Ad 3</a></li>
+
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user left small"></i>Mr User <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Logout</a></li>
+
+
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
     </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
 
-    <div class="container">
+    <div class="page container">
         <div class="row">
 
             <div class="col-md-8">
@@ -160,7 +130,7 @@
               <div class="contactform row">
                 <div class="fb-share-button" data-href="http://developers.facebook.com/docs/plugins/" data-type="button_count"></div>
 
-                <button class="contactbtn btn btn-primary btn-lg"><i class="fa fa-phone left"></i>Contact Owner</button>
+                <button id="contactBtn" class="contactbtn btn btn-primary btn-lg"><i class="fa fa-phone left"></i><span id="ownerno">Contact Owner</span></button>
 
               </div>
             </div>
@@ -186,7 +156,11 @@
                         </li>
                     </ul>
                 </div>
-
+                <div class="row">
+                   <div class="ad_desc col-md-12">
+                    <p>It is a nice house for a small family. Well lit and spacious. The bath and kitchen has brand-new fittings. The whole apartment has been washed and painted after the last tenant left</p>
+                  </div>
+                </div>
                 <div class="adcontent row">
                   <div class="col-md-12">
                   <h2 class="fulladdress">Full Address</h2>
@@ -200,8 +174,10 @@
                   </p>
                   </div>
 
+            
+
                   <div class="col-md-12">
-                    <h2>Ratings &amp; Reviews</h2>
+                    <h2>What they say about this house</h2>
                     <ul class="browse-tabs nav nav-tabs">
                       <li class="active"><a href="#overall" data-toggle="tab">Overall</a></li>
                       <li><a href="#water" data-toggle="tab">Water</a></li>
@@ -427,6 +403,7 @@
                   <tr><td>2 baths</td><td><img src="img/bath.png"><img src="img/bath.png"></td></tr>
                   <tr><td>2 balconies</td><td><img src="img/balc.png"><img src="img/balc.png"></td></tr>
                   <tr><td>2 living rooms</td><td><img src="img/tv.png"><img src="img/tv.png"></td></tr>
+                  <tr><td>Have a seperate dining space</td><td></td></tr>
                 </tbody>
               </table>
 
@@ -609,6 +586,11 @@
              $('#grating').raty({ 
               score: 4 
             });
+
+             $('#contactBtn').click(function(){
+              $('#ownerno').text('011-234-567')
+             });
+             
 
         });
 
