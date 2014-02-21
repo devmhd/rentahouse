@@ -59,6 +59,10 @@
     color: #772953;
   }
 
+  a:hover{
+    text-decoration: none;
+  }
+
   ul{
     margin: 0;
     padding: 0;
@@ -68,6 +72,9 @@
     max-width: 100%;
   }
 
+  input, button, select, a{
+    outline: none;
+  }
 
 
   .container{
@@ -102,6 +109,7 @@
   	font-family: PTSans ,sans-serif;
   	text-transform: uppercase;
   	font-size: 1.3em;
+    letter-spacing: -1px;
   }
 
   .homepage.jumbotron{
@@ -132,6 +140,10 @@
 
   i.fa{
      font-size: 1.3em
+  }
+
+  i.fa.small{
+     font-size: 1.0em
   }
 
   i.fa.left{
@@ -252,8 +264,104 @@
 .house-grid img {
 box-shadow: 1px 1px 5px -1px #5c2040;
 background-color: #5c2040;
+}
+.customsearchbutton{
+  margin-bottom: 100px;
+}
 
 
 
+header.profile h5{
+  font-family: OpenSans, sans-serif
+}
 
+.imgslider{
+   margin-left:0;
+}
 
+.pricetag{
+box-shadow:5px 6px 13px -6px gray;
+border-radius: 10px;
+border-bottom-right-radius: 0;
+border-top-right-radius: 0;
+padding: 10px;
+margin-left: 20px;
+margin-bottom: 50px;
+background-color: #eee;
+}
+
+.pricetag h2{
+  margin-top: 10px;
+}
+
+.pricetag h2 span{
+  font-size: 0.8em;
+  color: #808080;
+}
+
+.contactbtn{
+  margin-top: 30px;
+}
+
+.contactform{
+  text-align: center;
+}
+
+.adlocation{
+  padding: 10px;
+}
+
+.adlocation img.imgmap{
+  padding: 6px;
+  box-shadow: 0px 0px 2px 0px gray;
+}
+
+h2.fulladdress{
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+
+p.fulladdress{
+  background: #eee;
+  padding: 10px;
+  border-left: 5px solid #ccc;
+}
+
+button.iconbutton-md{
+  margin: 5px;
+}
+
+.ratingbox img{
+  float: left;
+}
+
+.bgicon{
+  padding: 10px;
+}
+
+.ratingbox header{
+
+  margin-left: 20px;
+  float: left;
+}
+
+.ratingbox h1{
+  margin: 10px 0;
+}
+
+.ratingbox{
+  margin: 20px
+}
+
+img.media-object{
+  border: 2px solid #ddd;
+}
+
+.comments{
+  margin-top: 20px;
+}
+
+.comment{
+  margin-left: 0;
+  padding: 15px
+}

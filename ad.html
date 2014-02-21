@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <![endif]-->
+
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=265071366871575";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Rent-A-House</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#about">
+                            <i class="fa fa-eye left small"></i>Browse Ads</a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <i class="fa fa-thumb-tack left small"></i>Post Ad</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bookmark left small"></i>My Bookmarks
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Ad 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Ad 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Ad 3</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-list-ul left small"></i>My Ads
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Ad 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Ad 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Ad 3</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user left small"></i>Mr User
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Logout</a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8">
+
+                <header class="profile">
+                    <h2>19/A North Basabo</h2>
+                    <h4>
+                        <a href="#">Dhaka</a>
+                        <i class="fa fa-angle-right small"></i>
+                        <a href="#">Sabujbagh</a>
+                        <i class="fa fa-angle-right small"></i>
+                        <a href="#">Basabo</a>
+                    </h4>
+
+
+                    <h5>
+                        1400 sqft
+                        <span class="feat-divider">|</span>
+                        2 beds
+                        <span class="feat-divider">|</span>
+                        2 baths
+                    </h5>
+
+                </header>
+            </div>
+
+            <div class="col-md-4">
+
+              <div class="contactform row">
+                <div class="fb-share-button" data-href="http://developers.facebook.com/docs/plugins/" data-type="button_count"></div>
+
+                <button class="contactbtn btn btn-primary btn-lg"><i class="fa fa-phone left"></i>Contact Owner</button>
+
+              </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-8">
+
+                <div class="imgslider row">
+                    <ul class="bxslider">
+                        <li>
+                            <img src="img/slide1.jpg" title="Kitchen" />
+                        </li>
+                        <li>
+                            <img src="img/slide2.jpg" title="Lawn" />
+                        </li>
+                        <li>
+                            <img src="img/slide3.jpg" title="Living Room" />
+                        </li>
+                        <li>
+                            <img src="img/slide4.jpg" title="Bedroom" />
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="adcontent row">
+                  <div class="col-md-12">
+                  <h2 class="fulladdress">Full Address</h2>
+                  <button class="iconbutton-md btn btn-md btn-primary" data-toggle="tooltip" data-placement="top" title="Show in Map"><i class="fa fa-map-marker"></i></button>
+                  <button class="iconbutton-md btn btn-md btn-primary"  data-toggle="tooltip" data-placement="top" title="Print this address"><i class="fa fa-print"></i></button>
+                  <p class="fulladdress">
+                    19/A North Basabo (2<sup>nd</sup> floor, on the left)<br>
+                    Opposite to ABC High School<br>
+                    Basabo, Sabujhbagh, Dhaka
+                    <br>
+                  </p>
+                  </div>
+
+                  <div class="col-md-12">
+                    <h2>Ratings &amp; Reviews</h2>
+                    <ul class="browse-tabs nav nav-tabs">
+                      <li class="active"><a href="#overall" data-toggle="tab">Overall</a></li>
+                      <li><a href="#water" data-toggle="tab">Water</a></li>
+                      <li><a href="#electricity" data-toggle="tab">Electricity</a></li>
+                      <li><a href="#gas" data-toggle="tab">Gas</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+
+                      <div class="tab-pane fade in active" id="overall">
+                        <div class="row">
+
+                          <div class="col-md-6 row">
+
+                            <div class="ratingbox clearfix">
+                              <img class="bgicon" src="img/star-bg.png">
+                              <header>
+                                <h1>4.2</h1>
+                                <div id="orating"></div>
+                                <p>Rated by 17 users</p>
+                              </header>
+                            </div>
+
+                            <div class="comment row">
+                              <textarea placeholder="What do you know about this house?" class="form-control"></textarea>
+                              <button class="form-control btn btn-sm btn-primary">Submit</button>
+                            </div>
+
+
+                          </div>
+
+                          <div class="comments col-md-6">
+                            <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="img/silhouette-man.jpg" style="width: 64px; height: 64px;">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Abdul Karim</h4>
+        Lived for 10 years. Nice House. 
+      </div>
+    </div>
+
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="img/silhouette-man.jpg" style="width: 64px; height: 64px;">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">John Doe</h4>
+        Terrible One.
+      </div>
+    </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+
+                       <div class="tab-pane fade in" id="water">
+                        <div class="row">
+
+                          <div class="col-md-6 row">
+
+                            <div class="ratingbox clearfix">
+                              <img class="bgicon" src="img/water-bg.png">
+                              <header>
+                                <h1>4.7</h1>
+                                <div id="wrating"></div>
+                                <p>Rated by 15 users</p>
+                              </header>
+                            </div>
+
+                            <div class="comment row">
+                              <textarea placeholder="What do you know about water facilities in this house?" class="form-control"></textarea>
+                              <button class="form-control btn btn-sm btn-primary">Submit</button>
+                            </div>
+
+
+                          </div>
+
+                          <div class="comments col-md-6">
+                            <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="img/silhouette-man.jpg" style="width: 64px; height: 64px;">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Abdul Karim</h4>
+        Water all the time 
+      </div>
+    </div>
+
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="img/silhouette-man.jpg" style="width: 64px; height: 64px;">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">John Doe</h4>
+       Water flows like springs.
+      </div>
+    </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+
+
+
+
+
+                      <div class="tab-pane fade in" id="electricity">
+                        <div class="row">
+
+                          <div class="col-md-6 row">
+
+                            <div class="ratingbox clearfix">
+                              <img class="bgicon" src="img/elec-bg.png">
+                              <header>
+                                <h1>3.1</h1>
+                                <div id="erating"></div>
+                                <p>Rated by 10 users</p>
+                              </header>
+                            </div>
+
+                            <div class="comment row">
+                              <textarea placeholder="What do you know about electricity facilities in this house?" class="form-control"></textarea>
+                              <button class="form-control btn btn-sm btn-primary">Submit</button>
+                            </div>
+
+
+                          </div>
+
+                          <div class="comments col-md-6">
+                            <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="img/silhouette-man.jpg" style="width: 64px; height: 64px;">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Simon</h4>
+        Loadshedding all the time. 
+      </div>
+    </div>
+
+   
+                          </div>
+                          
+                        </div>
+                      </div>
+
+
+
+                      <div class="tab-pane fade in" id="gas">
+                        <div class="row">
+
+                          <div class="col-md-6 row">
+
+                            <div class="ratingbox clearfix">
+                              <img class="bgicon" src="img/gas-bg.png">
+                              <header>
+                                <h1>4.0</h1>
+                                <div id="grating"></div>
+                                <p>Rated by 2 users</p>
+                              </header>
+                            </div>
+
+                            <div class="comment row">
+                              <textarea placeholder="What do you know about gas facilities in this house?" class="form-control"></textarea>
+                              <button class="form-control btn btn-sm btn-primary">Submit</button>
+                            </div>
+
+
+                          </div>
+
+                          <div class="comments col-md-6">
+                            <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="img/silhouette-man.jpg" style="width: 64px; height: 64px;">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Simon</h4>
+          Have gas, but the house owner stops gas in the afternoon.
+      </div>
+    </div>
+
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="img/silhouette-man.jpg" style="width: 64px; height: 64px;">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Shuvo</h4>
+        Gas stops after 3 PM
+      </div>
+    </div>
+
+   
+                          </div>
+                          
+                        </div>
+                      </div>
+
+
+
+                    </div>
+
+                  </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4">
+              <div class="pricetag row">
+                <h2><i class="fa fa-tag small left right"></i>৳ 16,000
+                    <span>/mo</span>
+                </h2>
+              </div>
+
+              <h3 class="text-center">1400 sqft @ ৳200/sqft</h3>
+
+              <table cellpadding="0" cellspacing="0" border="0" class="table table-striped">
+                <tbody>
+                  <tr><td>3 beds</td><td><img src="img/bed.png"><img src="img/bed.png"><img src="img/bed.png"></td></tr>
+                  <tr><td>2 baths</td><td><img src="img/bath.png"><img src="img/bath.png"></td></tr>
+                  <tr><td>2 balconies</td><td><img src="img/balc.png"><img src="img/balc.png"></td></tr>
+                  <tr><td>2 living rooms</td><td><img src="img/tv.png"><img src="img/tv.png"></td></tr>
+                </tbody>
+              </table>
+
+
+              <h2>Location</h2>
+              <div class="adlocation row">
+                <img class="imgmap" src="http://maps.googleapis.com/maps/api/staticmap?center=23.726262019585718,90.41083213272101&zoom=16&size=500x300&sensor=false&&markers=color:red%7Clabel:A%7C23.726262019585718,90.41083213272101">
+              </div>
+
+              <h2>Nearby Houses</h2>
+              <div class="houselist">
+
+            <a href="singlead.html" class="searchresult-row">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="img/1.jpg">
+                </div>
+                <div class="col-md-8">
+                  <h2>Tk 16,000 <span>/mo</span></h2>
+                  <h4>
+
+                    1400 sqft 
+
+                    <span class="feat-divider">|</span>  
+
+                    3 br 
+
+                    <span class="feat-divider">|</span> 
+
+                    2 ba
+
+
+                  </h4>
+
+                  <h5><i class="fa fa-map-marker"></i> Kalabagan, Dhaka</h5>
+
+
+                </div>
+              </div>
+            </a>
+
+
+            <a href="singlead.html" class="searchresult-row">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="img/2.jpg">
+                </div>
+                <div class="col-md-8">
+                  <h2>Tk 26,000 <span>/mo</span></h2>
+                  <h4>
+
+                    1400 sqft 
+
+                    <span class="feat-divider">|</span>  
+
+                    3 br 
+
+                    <span class="feat-divider">|</span> 
+
+                    2 ba
+
+
+                  </h4>
+
+                  <h5><i class="fa fa-map-marker"></i> Kalabagan, Dhaka</h5>
+
+
+                </div>
+              </div>
+            </a>
+
+
+            <a href="singlead.html" class="searchresult-row">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="img/3.jpg">
+                </div>
+                <div class="col-md-8">
+                  <h2>Tk 32,000 <span>/mo</span></h2>
+                  <h4>
+
+                    1400 sqft 
+
+                    <span class="feat-divider">|</span>  
+
+                    3 br 
+
+                    <span class="feat-divider">|</span> 
+
+                    2 ba
+
+
+                  </h4>
+
+                  <h5><i class="fa fa-map-marker"></i> Kalabagan, Dhaka</h5>
+
+
+                </div>
+              </div>
+            </a>
+
+             <a href="singlead.html" class="searchresult-row">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="img/3.jpg">
+                </div>
+                <div class="col-md-8">
+                  <h2>Tk 32,000 <span>/mo</span></h2>
+                  <h4>
+
+                    1400 sqft 
+
+                    <span class="feat-divider">|</span>  
+
+                    3 br 
+
+                    <span class="feat-divider">|</span> 
+
+                    2 ba
+
+
+                  </h4>
+
+                  <h5><i class="fa fa-map-marker"></i> Kalabagan, Dhaka</h5>
+
+
+                </div>
+              </div>
+            </a>
+            </div>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')
+    </script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/jquery.bxslider.min.js"></script>
+
+     <script src="js/jquery.bxslider.min.js"></script>
+
+      <script src="js/jquery.raty.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('.bxslider').bxSlider({
+                mode: 'fade',
+                captions: true,
+                adaptiveHeight: true
+            });
+
+            $("button").tooltip();
+
+            $('#orating').raty({ 
+              score: 3 
+            });
+
+             $('#wrating').raty({ 
+              score: 5 
+            });
+
+             $('#erating').raty({ 
+              score: 3 
+            });
+
+             $('#grating').raty({ 
+              score: 4 
+            });
+
+        });
+
+        
+    </script>
+
+</body>
+
+</html>
