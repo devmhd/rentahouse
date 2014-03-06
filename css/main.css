@@ -401,7 +401,9 @@ img.media-object{
   width: 500px;
 }
 
-
+#gmap_canvas img{
+  max-width: none;
+}
 
 .priceinput{
   background: #ddd;

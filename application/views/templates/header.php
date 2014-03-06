@@ -1,3 +1,24 @@
+<?php
+
+/*
+  
+  $page_title
+  $page_slug //
+
+
+      index
+      newad
+      browse
+      singlead
+
+
+*/
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -6,25 +27,35 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title><?php echo $page_title;?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
-        <link rel="stylesheet" href="css/main.css">
+        <?php echo link_tag('css/bootstrap.min.css'); 
+              echo link_tag('css/main.css'); 
+               echo link_tag('css/font-awesome.min.css'); 
 
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+             if($page_slug == 'singlead')
+                echo link_tag('css/jquery.bxslider.css');
+
+              if($page_slug == 'newad')
+                echo link_tag('css/tooltipster.css');                
+              
+              
+               
+        ?>
         
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <style type="text/css">
+        <script src="<?php echo base_url();?>js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        
 
-          body{
-            padding-bottom: 0
-          }
+         <?php
 
-        </style>
+            if($page_slug == 'index')
+              echo "<style type='text/css'>body{padding-bottom:0}</style>";
+
+         ?>
+              
 
     </head>
     <body>
@@ -43,8 +74,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="browse.html"><i class="fa fa-eye left small"></i>Browse Ads</a></li>
-            <li><a href="newad.html"><i class="fa fa-thumb-tack left small"></i>Post Ad</a></li>
+            <li <?php echo $page_slug=='browse'?"class='active'":"";?> ><a href="browse"><i class="fa fa-eye left small"></i>Browse Ads</a></li>
+            <li <?php echo $page_slug=='newad'?"class='active'":"";?> ><a href="newad"><i class="fa fa-thumb-tack left small"></i>New Ad</a></li>
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -82,39 +113,3 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="homepage jumbotron">
-      <div class="jumbocontainer container">
-        <h1>Find your home from a listing of over 1,000,000 houses</h1>
-
-        <p>
-          <a href="browse.html" class="btn btn-danger btn-lg"><i class="fa fa-search left"></i>Find a house &raquo;</a>
-          <a href="newad.html" class="btn btn-danger btn-lg"><i class="fa fa-home left"></i>Rent your house &raquo;</a>
-        </p>
-
-
-        <p>Rent-a-house is a free web service that helps you find rental houses, or rent a house if you are a house owner. <a href="#">Learn More...</a></p>
-        
-      </div>
-    </div>
-
-        
-
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
-</html>
