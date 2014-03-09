@@ -6,7 +6,8 @@ class Handler extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('region');
+		
+		$this->load->model('ad');
 
 		$this->load->helper('html');
 		$this->load->helper('url');
@@ -16,11 +17,11 @@ class Handler extends CI_Controller {
 	public function index()
 	{
 
-		
-
 		redirect('/browse');
 
 	}
+
+
 
 	public function newad()
 	{
@@ -61,8 +62,21 @@ class Handler extends CI_Controller {
 		$rent = $this->input->post('rent');
 		if(!$rent) redirect('/newad');
 
+		$contactno = $this->input->post('contactno');
+		if(!$contactno) redirect('/newad');
+
+		$availabledate = $this->input->post('availabledate');
+		if(!$availabledate) redirect('/newad');
+
+
+		
+
 
 		print_r($this->input->post());
+
+		$this->ad->insert($this->input->post());
+
+	//	echo $this->slugify($title);
 
 //		$data = $this->region->getAllRegion();
 
@@ -71,5 +85,6 @@ class Handler extends CI_Controller {
 
 	}
 
+	
 	
 }

@@ -15,7 +15,11 @@
 
                 echo "<script src='" . base_url() . "js/jquery.tooltipster.min.js'></script>";
                 echo "<script src='" . base_url() . "js/jquery.validate.min.js'></script>";
+
+             
+
         		echo "<script src='" . base_url() . "js/newad.js'></script>";
+
             }
 
 

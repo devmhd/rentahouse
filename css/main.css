@@ -85,6 +85,7 @@
   }
 
   .page.container{
+    border-radius: 6px;
     padding-bottom: 50px;
   }
 
@@ -216,6 +217,7 @@
 
   margin-top: 5px;
   font-family: "OpenSans";
+  font-size: 25px;
 }
 
 .houselist a.house-grid h2 span,
@@ -296,6 +298,7 @@ background-color: #eee;
 }
 
 .pricetag h2{
+  margin-left: 10px;
   margin-top: 10px;
 }
 
@@ -305,7 +308,7 @@ background-color: #eee;
 }
 
 .contactbtn{
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .contactform{
@@ -417,4 +420,13 @@ border-radius: 10px;
 
 img.just-uploaded{
   box-shadow: 2px 2px 5px -1px
+}
+
+
+.loginrow{
+  margin-top: 150px;
+}
+
+.loginrow .input-group{
+  margin-bottom: 10px;
 }

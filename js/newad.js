@@ -66,6 +66,9 @@ function initialize()
     placeMarker(event.latLng);
     $('#latInput').val(event.latLng.lat());
     $('#lngInput').val(event.latLng.lng());
+
+    $('#gmap_canvas').tooltipster('content', "<h3 style='margin-top:5px'>DONE!</h3><p>You can change the location by double clicking on another location.</p>");
+
   });
 }
 
@@ -100,7 +103,7 @@ function enableValidation(){
   $('#theForm input[type="text"], input[type="date"], #theForm select, #theForm textarea').tooltipster({
     trigger: 'custom',
     onlyOne: false,
-    position: 'top-left'
+    position: 'bottom-left'
   });
 
 
@@ -138,7 +141,8 @@ function enableValidation(){
       n_dining: { valueNotEquals: "none"},
       sqft: { required: true, number: true},
       rent: { required: true, number: true},
-      availabledate: { required: true}
+      availabledate: { required: true},
+      contactno: { required: true, number: true}
     }
   });
 
@@ -246,12 +250,19 @@ $(document).ready(function(){
 
   var container = $('#gmap_canvas').closest('.col-md-6');
   var width = container.width();
-
   $('#gmap_canvas').width(width);
 
 
-  interactiveMap();
+  $('#gmap_canvas').tooltipster({
+    content: "<h3 style='margin-top:5px'>Map Guide</h3><p><ol><li>Select <strong>Area, Region and Neighborhoor</strong> on the left.</li><li>Navigate to your house location.</li> <li>Then <strong>double click</strong> on the exact location of your house.</li></ol></p>",
+    theme: 'tooltipster-shadow',
+    contentAsHTML: true,
+    arrow: false,
+    offsetY: -10
+  });
 
+
+  interactiveMap();
 
   enableValidation();
 

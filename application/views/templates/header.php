@@ -38,8 +38,10 @@
              if($page_slug == 'singlead')
                 echo link_tag('css/jquery.bxslider.css');
 
-              if($page_slug == 'newad')
+              if($page_slug == 'newad'){
                 echo link_tag('css/tooltipster.css');                
+                            
+              }
               
               
                
@@ -70,18 +72,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Rent-A-House</a>
+          <a class="navbar-brand" href="<?php echo base_url();?>">Rent-A-House</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li <?php echo $page_slug=='browse'?"class='active'":"";?> ><a href="browse"><i class="fa fa-eye left small"></i>Browse Ads</a></li>
-            <li <?php echo $page_slug=='newad'?"class='active'":"";?> ><a href="newad"><i class="fa fa-thumb-tack left small"></i>New Ad</a></li>
+            <li <?php echo $page_slug=='browse'?"class='active'":"";?> ><a href="browse">Browse Ads</a></li>
+            <li <?php echo $page_slug=='newad'?"class='active'":"";?> ><a href="newad">New Ad</a></li>
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bookmark left small"></i>My Bookmarks <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Bookmarks <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="singlead.html">Ad 1</a></li>
                 <li><a href="singlead.html">Ad 2</a></li>
@@ -92,7 +94,7 @@
 
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ul left small"></i>My Ads <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Ads <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="singlead.html">Ad 1</a></li>
                 <li><a href="singlead.html">Ad 2</a></li>
@@ -102,7 +104,7 @@
             </li>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user left small"></i>Mr User <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mr User <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Logout</a></li>
 

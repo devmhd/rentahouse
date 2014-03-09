@@ -116,6 +116,9 @@ echo form_open_multipart("handler/newad", array('id'=>'theForm'));
             <input name='sqft' id="ipSqft" type="text" class="form-control" placeholder="Area">
             <span class="input-group-addon">square feet</span>
           </div>
+
+          <h3 style='display:inline-block;margin-right:20px;margin-top:30px'>Contact Number</h3>
+         <input style='width:auto;display:inline-block' type='text' class='form-control' name='contactno' value='0112345677' placeholder='Contact Number'/>
         </div>
 
         
