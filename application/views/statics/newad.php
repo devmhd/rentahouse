@@ -3,9 +3,11 @@
 
 echo form_open_multipart("handler/newad", array('id'=>'theForm'));
 
+
+
 ?>
 
-
+<input type='hidden' name='owner' value='<?php echo $loggedIn;?>'/>
 
 <div class="page container">
               <h1>Post A New Ad</h1>
@@ -187,9 +189,9 @@ echo form_open_multipart("handler/newad", array('id'=>'theForm'));
 
         <div class="col-md-12">
           <div class="col-md-12">
-          <label for="fileinput" class="col-md-6">
-          <img src="img/addBtn.png" alt="">
-          <input style="display:none" type="file" name="imgthumb" id="fileinput" class="form-control"/>
+ <!--          <label for="fileinput" class="col-md-6"> -->
+          <img id='addBtn' src="img/addBtn.png" alt="">
+   <!--        <input style="display:none" type="file" name="imgthumb" id="fileinput" class="form-control"/> -->
         </label>
             
 

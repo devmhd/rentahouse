@@ -52,6 +52,8 @@ $route['service/(:any)'] = "ajax/$1";
 
 $route['handler/(:any)'] = "handler/$1";
 
+$route['addphoto/(:any)'] = "pages/addphotos/$1";
+
 $route['(:any)'] = "pages/$1";
 
 /* End of file routes.php */

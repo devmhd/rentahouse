@@ -31,14 +31,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <?php echo link_tag('css/bootstrap.min.css'); 
+        <?php echo link_tag('css/bootstrap.min.css');
               echo link_tag('css/main.css'); 
                echo link_tag('css/font-awesome.min.css'); 
 
              if($page_slug == 'singlead')
                 echo link_tag('css/jquery.bxslider.css');
 
-              if($page_slug == 'newad'){
+              if($page_slug == 'newad' || $page_slug == 'register'){
                 echo link_tag('css/tooltipster.css');                
                             
               }
@@ -77,10 +77,15 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li <?php echo $page_slug=='browse'?"class='active'":"";?> ><a href="browse">Browse Ads</a></li>
+
+            <?php if($loggedIn){ ?>
             <li <?php echo $page_slug=='newad'?"class='active'":"";?> ><a href="newad">New Ad</a></li>
+            <?php } ?>
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
+
+          <?php if($loggedIn){ ?>
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Bookmarks <b class="caret"></b></a>
@@ -104,13 +109,23 @@
             </li>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mr User <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $loggedUser;?> <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Logout</a></li>
+                <li><a href="<?php echo base_url();?>logout">Logout</a></li>
 
 
               </ul>
             </li>
+
+            <?php }else{ ?>
+
+            <li>
+              <a href="<?php echo base_url();?>login">Login</a>
+             
+            </li>
+
+            <?php } ?>
+
           </ul>
         </div><!--/.navbar-collapse -->
       </div>

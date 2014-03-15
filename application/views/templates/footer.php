@@ -15,10 +15,23 @@
 
                 echo "<script src='" . base_url() . "js/jquery.tooltipster.min.js'></script>";
                 echo "<script src='" . base_url() . "js/jquery.validate.min.js'></script>";
-
-             
-
         		echo "<script src='" . base_url() . "js/newad.js'></script>";
+
+            }
+
+            if($page_slug == 'newad_photos'){
+
+                echo "<script src='" . base_url() . "js/jquery.tooltipster.min.js'></script>";
+                echo "<script src='" . base_url() . "js/jquery.validate.min.js'></script>";
+                echo "<script src='" . base_url() . "js/newad_photos.js'></script>";
+
+            }
+
+            if($page_slug == 'register'){
+
+                echo "<script src='" . base_url() . "js/jquery.tooltipster.min.js'></script>";
+                echo "<script src='" . base_url() . "js/jquery.validate.min.js'></script>";
+                echo "<script src='" . base_url() . "js/register.js'></script>";
 
             }
 

@@ -157,6 +157,8 @@ class CI_Upload {
 			return FALSE;
 		}
 
+		echo "PATH: ", $this->upload_path;
+
 		// Was the file able to be uploaded? If not, determine the reason why.
 		if ( ! is_uploaded_file($_FILES[$field]['tmp_name']))
 		{

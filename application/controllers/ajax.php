@@ -49,4 +49,21 @@ class Ajax extends CI_Controller {
 		$this->output->set_output(json_encode($data));
 
 	}
+
+	public function checkemail(){
+
+		$email = $this->input->get('email');
+		$this->load->model('user');
+
+		$data = $this->user->checkEmail($email);
+
+
+
+		$this->output->set_content_type('application/json');
+
+		//if($data) $this->output->set_output('This email is already registered');
+		$this->output->set_output($data);
+		
+
+	}
 }

@@ -9,6 +9,20 @@ class Ad extends CI_Model{
         $this->load->database();
     }
 
+    function getOwner($slug){
+
+        $query = $this->db->query("SELECT owner FROM ad WHERE slug=?", array($slug));
+
+        $res = $this->arrayfy($query->result());
+
+        if(count($res)>0){
+            return $res[0]['owner'];
+        }
+        else
+            return false;
+
+    }
+
     function getAll(){
 
     	$query = $this->db->query("SELECT * FROM ad WHERE 1 ORDER BY created DESC");
@@ -27,6 +41,8 @@ class Ad extends CI_Model{
     function insert($post_arr){
 
         $arr = $post_arr;
+
+        print_r($post_arr);
 
         $arr['slug'] = $this->slugify($arr['title']) . '-for-rent';
 
@@ -62,6 +78,15 @@ class Ad extends CI_Model{
         }
 
         return $text;
+    }
+
+    function arrayfy($result){
+        $arr = array();
+
+        foreach ($result as $row) {
+            $arr[] = get_object_vars($row);
+        }
+        return $arr;
     }
 
 

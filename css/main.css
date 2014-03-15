@@ -45,165 +45,165 @@
   body{
 
    // font-family: MerriSansLight, sans-serif;
-    padding-top: 48px;
-    padding-bottom: 100px;
-    background-color: #eddbe5;
+   padding-top: 48px;
+   padding-bottom: 100px;
+   background-color: #eddbe5;
 
-  }
-
-  h1, h2, h3, h4, h5, h6{
-
-    font-family: "OpenSansLight", sans-serif
-  }
-
-  a{
-    color: #772953;
-  }
-
-  a:hover{
-    text-decoration: none;
-  }
-
-  ul{
-    margin: 0;
-    padding: 0;
-  }
-
-  img{
-    max-width: 100%;
-  }
-
-  input, button, select, a{
-    outline: none;
-  }
-
-
-  .container{
-
-    background-color: white;
-    box-shadow: 0px 0px 12px -1px;
-  }
-
-  .page.container{
-    border-radius: 6px;
-    padding-bottom: 50px;
-  }
-
-  .navbar .container, .jumbocontainer{
-    background-color: transparent;
-    box-shadow: none;
-  }
-
-
-  .form-control{
-    border-width: 2px;
-    transition: border-color 0.5s;
-  }
-
-
-  .form-control:focus{
-    box-shadow: none;
-    border-color: #5c2040;
-  }
-
-  .navbar-brand{
-
-    font-size: 1.5em;
-  }
-  .navbar{
-
-  	font-family: PTSans ,sans-serif;
-  	text-transform: uppercase;
-  	font-size: 1.3em;
-    letter-spacing: -1px;
-  }
-
-  .homepage.jumbotron{
-
-    background: url(../img/home-bg.jpg);
-    position : relative;
-    padding-top: 100px; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 768px;
-    margin: 0;
-    color: white;
-    text-align: center;
-  }
-
-  .homepage.jumbotron h1{
-
-
-    line-height: 1.2em;
-    text-shadow: 0px 0px 2px white;
-    margin-bottom: 50px;
-  }
-
-  .homepage.jumbotron p{
-    margin-top: 50px;
-  }
-
-  i.fa{
-     font-size: 1.3em
-  }
-
-  i.fa.small{
-     font-size: 1.0em
-  }
-
-  i.fa.left{
-    margin-right: 10px;
-   
-  }
-
-   i.fa.right{
-    margin-left: 10px;
-  }
-
-  .form-row{
-    margin-top: 35px;
-  }
-
-  .browse-tabs{
-    margin-top: 20px;
-  }
-
-  .nav-tabs>li>a{
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .houselist{
-    margin-top: 20px;
-
-    
-    
-    text-align: left;
-  }
-
-  .col3 a.house-grid{
-    width: 33%;
-  }
-
-
-  .col2 a.house-grid{
-    width: 49%;
-
-  }
-
-  .col1 a.house-grid{
-    width: 99%;
-
-  }
-
-  .houselist a.house-grid{
-   display: inline-block;
-   padding: 20px 5px;
-   border: 1px solid #eee;
  }
 
- .houselist a.house-grid:hover{
+ h1, h2, h3, h4, h5, h6{
+
+  font-family: "OpenSansLight", sans-serif
+}
+
+a{
+  color: #772953;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  max-width: 100%;
+}
+
+input, button, select, a{
+  outline: none;
+}
+
+
+.container{
+
+  background-color: white;
+  box-shadow: 0px 0px 12px -1px;
+}
+
+.page.container{
+  border-radius: 6px;
+  padding-bottom: 50px;
+}
+
+.navbar .container, .jumbocontainer{
+  background-color: transparent;
+  box-shadow: none;
+}
+
+
+.form-control{
+  border-width: 2px;
+  transition: border-color 0.5s;
+}
+
+
+.form-control:focus{
+  box-shadow: none;
+  border-color: #5c2040;
+}
+
+.navbar-brand{
+
+  font-size: 1.5em;
+}
+.navbar{
+
+ font-family: PTSans ,sans-serif;
+ text-transform: uppercase;
+ font-size: 1.3em;
+ letter-spacing: -1px;
+}
+
+.homepage.jumbotron{
+
+  background: url(../img/home-bg.jpg);
+  position : relative;
+  padding-top: 100px; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 768px;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.homepage.jumbotron h1{
+
+
+  line-height: 1.2em;
+  text-shadow: 0px 0px 2px white;
+  margin-bottom: 50px;
+}
+
+.homepage.jumbotron p{
+  margin-top: 50px;
+}
+
+i.fa{
+ font-size: 1.3em
+}
+
+i.fa.small{
+ font-size: 1.0em
+}
+
+i.fa.left{
+  margin-right: 10px;
+  
+}
+
+i.fa.right{
+  margin-left: 10px;
+}
+
+.form-row{
+  margin-top: 35px;
+}
+
+.browse-tabs{
+  margin-top: 20px;
+}
+
+.nav-tabs>li>a{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.houselist{
+  margin-top: 20px;
+
+  
+  
+  text-align: left;
+}
+
+.col3 a.house-grid{
+  width: 33%;
+}
+
+
+.col2 a.house-grid{
+  width: 49%;
+
+}
+
+.col1 a.house-grid{
+  width: 99%;
+
+}
+
+.houselist a.house-grid{
+ display: inline-block;
+ padding: 20px 5px;
+ border: 1px solid #eee;
+}
+
+.houselist a.house-grid:hover{
   background: #eee
 }
 
@@ -228,8 +228,8 @@
 
 .houselist a.searchresult-row{
   padding: 10px 5px;
-   border: 1px solid #eee;
-   display: block;
+  border: 1px solid #eee;
+  display: block;
 }
 
 .feat-divider{
@@ -269,8 +269,8 @@
 }
 
 .house-grid img {
-box-shadow: 1px 1px 5px -1px #5c2040;
-background-color: #5c2040;
+  box-shadow: 1px 1px 5px -1px #5c2040;
+  background-color: #5c2040;
 }
 .customsearchbutton{
   margin-bottom: 100px;
@@ -283,18 +283,18 @@ header.profile h5{
 }
 
 .imgslider{
-   margin-left:0;
+ margin-left:0;
 }
 
 .pricetag{
-box-shadow:5px 6px 13px -6px gray;
-border-radius: 10px;
-border-bottom-right-radius: 0;
-border-top-right-radius: 0;
-padding: 10px;
-margin-left: 20px;
-margin-bottom: 50px;
-background-color: #eee;
+  box-shadow:5px 6px 13px -6px gray;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding: 10px;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  background-color: #eee;
 }
 
 .pricetag h2{
@@ -410,8 +410,8 @@ img.media-object{
 
 .priceinput{
   background: #ddd;
-padding: 10px;
-border-radius: 10px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .upload-gallery-single{
@@ -428,5 +428,33 @@ img.just-uploaded{
 }
 
 .loginrow .input-group{
+  padding: 0 10px;
   margin-bottom: 10px;
+}
+
+.loginrow .bottompanel{
+
+  text-align: center;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.loginrow .bottompanel input[type='submit']{
+
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.alert-danger {
+  color: #FFFFFF;
+  background-color: #DA1919;
+  border-color: #eed3d7;
+}
+
+.alert-info {
+  color: #FFFFFF;
+  background-color: #007AB8;
+  border: none; 
 }
