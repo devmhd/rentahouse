@@ -35,6 +35,13 @@
 
             }
 
+             if($page_slug == 'singlead'){
+                echo "<script src='" . base_url() . "js/jquery.raty.min.js'></script>";
+                echo "<script src='" . base_url() . "js/jquery.bxslider.min.js'></script>";
+                echo "<script src='" . base_url() . "js/singlead.js'></script>";
+
+             }
+
 
 
         ?>

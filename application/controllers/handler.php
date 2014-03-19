@@ -99,25 +99,38 @@ class Handler extends CI_Controller {
 		
 		print_r($_FILES['images']);
 
-		foreach ($_FILES['images'] as $fieldname => $fileObject)  //fieldname is the form field name
-		{
-			if (!empty($fileObject['name']))
-			{
+		$nFile = count($_FILES['images']['name']);
 
-				$config['file_name']  = 'akka';
-				$this->upload->initialize($config);
-				if (!$this->upload->do_upload($fieldname))
-				{
-					$errors = $this->upload->display_errors();
-					print_r($errors);
-				}
-				else
-				{
-					print_r($this->upload->data());
-             		// Code After Files Upload Success GOES HERE
-				}
+		$uploads_dir =  SITE_ROOT . '/../../ad_images';
+
+
+		foreach ($_FILES["images"]["error"] as $key => $error) {
+			if ($error == UPLOAD_ERR_OK) {
+				$tmp_name = $_FILES["images"]["tmp_name"][$key];
+				$name = $_FILES["images"]["name"][$key];
+				move_uploaded_file($tmp_name, "$uploads_dir/$name");
 			}
 		}
+
+		// foreach ($_FILES['images'] as $fieldname => $fileObject)  //fieldname is the form field name
+		// {
+		// 	if (!empty($fileObject['name']))
+		// 	{
+
+		// 		$config['file_name']  = 'akka';
+		// 		$this->upload->initialize($config);
+		// 		if (!$this->upload->do_upload($fieldname))
+		// 		{
+		// 			$errors = $this->upload->display_errors();
+		// 			print_r($errors);
+		// 		}
+		// 		else
+		// 		{
+		// 			print_r($this->upload->data());
+  //            		// Code After Files Upload Success GOES HERE
+		// 		}
+		// 	}
+		// }
 
 		// if ( ! $this->upload->do_upload('images[]'))
 		// {

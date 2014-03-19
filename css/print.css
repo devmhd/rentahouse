@@ -1,0 +1,60 @@
+ @font-face
+   {
+   	font-family: OpenSans;
+   	src: url(../fonts/OpenSans-Regular.ttf);
+   }
+
+   @font-face
+   {
+   	font-family: OpenSansLight;
+   	src: url(../fonts/OpenSans-Light.ttf);
+   }
+
+   @font-face
+   {
+   	font-family: PTSans;
+   	src: url(../fonts/PT_Sans-Web-Regular.ttf);
+   }
+
+
+   @font-face
+   {
+   	font-family: OpenSansCond;
+   	src: url(../fonts/OpenSans-CondLight.ttf);
+   }
+
+   @font-face
+   {
+    font-family: MerriSans;
+    src: url(../fonts/MerriweatherSans-Regular.ttf);
+  }
+
+  @font-face
+  {
+    font-family: MerriSansLight;
+    src: url(../fonts/MerriweatherSans-Light.ttf);
+  }
+
+  h1, h2, h3, h4, h5, h6{
+
+  margin-bottom: 5px;
+  font-family: "OpenSansLight", sans-serif;
+  font-weight: normal;
+  text-align: center;
+}
+
+p{
+  font-family: PTSans;
+  margin-top: 5px;
+  text-align: center;
+}
+
+footer{
+  color: #999;
+  margin-top: 30px;
+  border-top: 1px solid #bbb;
+}
+
+footer h4{
+  margin-top: 5px;
+}

@@ -45,7 +45,7 @@ $route['404_override'] = '';
 
 
 
-$route['ad/(:any)'] = "ad/viewad/$1";
+$route['ad/(:any)'] = "adcontrol/viewad/$1";
 
 $route['service'] = "ajax";
 $route['service/(:any)'] = "ajax/$1";

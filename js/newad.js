@@ -295,6 +295,7 @@ $(document).ready(function(){
   var container = $('#gmap_canvas').closest('.col-md-6');
   var width = container.width();
   $('#gmap_canvas').width(width);
+  //google.maps.event.trigger(map, "resize");
 
 
   $('#gmap_canvas').tooltipster({

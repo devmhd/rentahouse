@@ -27,22 +27,16 @@ class Ad extends CI_Model{
 
     	$query = $this->db->query("SELECT * FROM ad WHERE 1 ORDER BY created DESC");
 
-		$res = $query->result();
-    	
-    	$arr = array();
+        $res = $query->result();
 
-    	foreach ($res as $row) {
-    		$arr[] = get_object_vars($row);
-    	}
-    	return $arr;
+
+        return arrayfy($res);
 
     }
 
     function insert($post_arr){
 
         $arr = $post_arr;
-
-        print_r($post_arr);
 
         $arr['slug'] = $this->slugify($arr['title']) . '-for-rent';
 
@@ -54,6 +48,24 @@ class Ad extends CI_Model{
 
 
     }
+
+    function getBySlug($slug){
+
+        $query = $this->db->query("SELECT * FROM ad WHERE slug = ? LIMIT 1", array($slug));
+
+        $ads = $this->arrayfy($query->result());
+
+
+        if(count($ads)>0){
+            return $ads[0];
+        }
+
+        else 
+            return false;
+
+    }
+
+
 
     private function slugify($text)
     { 
@@ -80,7 +92,7 @@ class Ad extends CI_Model{
         return $text;
     }
 
-    function arrayfy($result){
+    private function arrayfy($result){
         $arr = array();
 
         foreach ($result as $row) {
@@ -90,5 +102,6 @@ class Ad extends CI_Model{
     }
 
 
-    
+
 }
+

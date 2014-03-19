@@ -76,10 +76,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li <?php echo $page_slug=='browse'?"class='active'":"";?> ><a href="browse">Browse Ads</a></li>
+            <li <?php echo $page_slug=='browse'?"class='active'":"";?> ><a href="<?php echo base_url();?>browse">Browse Ads</a></li>
 
             <?php if($loggedIn){ ?>
-            <li <?php echo $page_slug=='newad'?"class='active'":"";?> ><a href="newad">New Ad</a></li>
+            <li <?php echo $page_slug=='newad'?"class='active'":"";?> ><a href="<?php echo base_url();?>newad">New Ad</a></li>
             <?php } ?>
 
           </ul>

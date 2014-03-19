@@ -402,6 +402,7 @@ img.media-object{
   box-shadow: 2px 2px 10px -3px gray;
   height: 300px;
   width: 500px;
+  padding: 0;
 }
 
 #gmap_canvas img{
@@ -457,4 +458,14 @@ img.just-uploaded{
   color: #FFFFFF;
   background-color: #007AB8;
   border: none; 
+}
+
+
+#mapModal .modal-body{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#mapModal .modal-footer{
+  margin-top: 0;
 }
