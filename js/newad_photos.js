@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
   $('#addBtn').click(function(){
-  var html = "<div class='upload-gallery-single row'><div class='col-md-3'><img class='just-uploaded' src='"  + "'></div><div class='col-md-9'><input class='images' type='file' name='images[]' /><textarea name='img-desc' class='form-control' placeholder='Small description of the photo; eg. The spacious living room'></textarea><a class='remove-photo btn btn-sm btn-info' style='margin-top:10px' >Remove</a></div></div>";
+  var html = "<div class='upload-gallery-single row'><div class='col-md-3'><img class='just-uploaded' src='"  + "'></div><div class='col-md-9'><input class='images' type='file' name='images[]' /><textarea name='img-desc[]' class='form-control' placeholder='Small description of the photo; eg. The spacious living room'></textarea><a class='remove-photo btn btn-sm btn-info' style='margin-top:10px' >Remove</a></div></div>";
 
   $('.upload-gallery').append(html);
 

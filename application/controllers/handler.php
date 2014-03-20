@@ -84,68 +84,59 @@ class Handler extends CI_Controller {
 	public function newad_photos()
 	{
 
-		$config['upload_path'] =  'ad_images/';
-
-
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']	= '1000';
-		$config['max_width']  = '1600';
-		$config['max_height']  = '900';
-
-		print_r($config);
-
 		
-		$this->load->library('upload', $config);
-		
-		print_r($_FILES['images']);
-
-		$nFile = count($_FILES['images']['name']);
-
-		$uploads_dir =  SITE_ROOT . '/../../ad_images';
-
-
-		foreach ($_FILES["images"]["error"] as $key => $error) {
-			if ($error == UPLOAD_ERR_OK) {
-				$tmp_name = $_FILES["images"]["tmp_name"][$key];
-				$name = $_FILES["images"]["name"][$key];
-				move_uploaded_file($tmp_name, "$uploads_dir/$name");
-			}
+		if(!($loggedIn = $this->input->cookie('loggedIn')))
+		{
+			redirect(base_url() . 'login?required=true');
+			return;
 		}
 
-		// foreach ($_FILES['images'] as $fieldname => $fileObject)  //fieldname is the form field name
-		// {
-		// 	if (!empty($fileObject['name']))
-		// 	{
 
-		// 		$config['file_name']  = 'akka';
-		// 		$this->upload->initialize($config);
-		// 		if (!$this->upload->do_upload($fieldname))
-		// 		{
-		// 			$errors = $this->upload->display_errors();
-		// 			print_r($errors);
-		// 		}
-		// 		else
-		// 		{
-		// 			print_r($this->upload->data());
-  //            		// Code After Files Upload Success GOES HERE
-		// 		}
-		// 	}
-		// }
+		if($slug = $this->input->post('ad_slug')){
 
-		// if ( ! $this->upload->do_upload('images[]'))
-		// {
-		// 	$error = array('error' => $this->upload->display_errors());
+			if($this->ad->getOwner($slug) == $loggedIn){
 
-		// 	print_r($error);
-		// 	//$this->load->view('upload_form', $error);
-		// }
-		// else
-		// {
-		// 	$data = array('upload_data' => $this->upload->data());
 
-		// 	print_r($data);
-		// 	//$this->load->view('upload_success', $data);
-		// }
+				$uploads_dir =  SITE_ROOT . '/../../ad_images';
+
+				$photos = array();
+
+				foreach ($_FILES["images"]["error"] as $key => $error) {
+
+					if ($error == UPLOAD_ERR_OK) {
+						$tmp_name = $_FILES["images"]["tmp_name"][$key];
+						$ext = $this->getExt($_FILES["images"]["type"][$key]);
+						$name = md5($this->input->ip_address() . time() . "_$key") . $ext;
+						move_uploaded_file($tmp_name, "$uploads_dir/$name");
+
+						$desc = $_POST['img-desc'][$key];
+
+						$photos[]= array($name, $desc);
+					}
+				}
+
+
+
+				$photo_json =  json_encode($photos);
+
+				$this->ad->updatePhotos($photo_json, $slug);
+
+				redirect(base_url().'ad/'.$slug.'?success=1');
+
+			}
+		};
+
+
+
+		
+
+
+
+
+		
+
+
+		
 
 	}
 
@@ -209,6 +200,30 @@ class Handler extends CI_Controller {
 		else{
 			redirect('/register?error=true');
 		}
+
+	}
+
+
+
+
+
+
+
+
+
+	function getExt($filetype)
+	{
+		if($filetype=='image/png')
+			return '.png';
+
+		if($filetype=='image/jpeg')
+			return '.jpg';
+
+		if($filetype=='image/gif')
+			return '.gif';
+
+
+		throw new Exception();
 
 	}
 

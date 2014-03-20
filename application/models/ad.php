@@ -49,6 +49,20 @@ class Ad extends CI_Model{
 
     }
 
+    function updatePhotos($photos, $ad_slug){
+
+        $data = array(
+            'photos' => $photos
+         );
+
+        $this->db->where('slug', $ad_slug);
+        $this->db->update('ad', $data); 
+
+
+    }
+
+
+
     function getBySlug($slug){
 
         $query = $this->db->query("SELECT * FROM ad WHERE slug = ? LIMIT 1", array($slug));
