@@ -9,7 +9,7 @@ class Adcontrol extends CI_Controller {
 		$this->load->helper('html');
 		$this->load->helper('url');
 
-		redirect('/browse');
+		redirect(base_url().'ads');
 
 	}
 
@@ -39,6 +39,7 @@ class Adcontrol extends CI_Controller {
 			$data['loggedIn'] = $loggedIn;
 			if($data['loggedIn']){
 				$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
+				$data['myAds'] = $this->ad->getByOwner($data['loggedIn']);
 			}
 
 			$addata['ad'] = $ad;

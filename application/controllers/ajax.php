@@ -16,7 +16,7 @@ class Ajax extends CI_Controller {
 		$this->load->helper('html');
 		$this->load->helper('url');
 
-		redirect('/browse');
+		redirect(base_url().'ads');
 
 	}
 

@@ -78,6 +78,10 @@ input, button, select, a{
 }
 
 
+big{
+  font-weight: normal;
+}
+
 .container{
 
   background-color: white;
@@ -117,6 +121,13 @@ input, button, select, a{
  font-size: 1.3em;
  letter-spacing: -1px;
 }
+
+.btn{
+
+  font-family: OpenSans, sans-serif;
+}
+
+
 
 .homepage.jumbotron{
 
@@ -200,7 +211,7 @@ i.fa.right{
 .houselist a.house-grid{
  display: inline-block;
  padding: 20px 5px;
- border: 1px solid #eee;
+ transition: background .3s;
 }
 
 .houselist a.house-grid:hover{
@@ -269,8 +280,10 @@ i.fa.right{
 }
 
 .house-grid img {
-  box-shadow: 1px 1px 5px -1px #5c2040;
-  background-color: #5c2040;
+ border-radius: 5px;
+ margin-left: 12px;
+ box-shadow: 2px 2px 2px 0px #7E7E7E;
+ background-color: #C29CB0;
 }
 .customsearchbutton{
   margin-bottom: 100px;
@@ -405,7 +418,7 @@ img.media-object{
   padding: 0;
 }
 
-#gmap_canvas img{
+#gmap_canvas img, #map_canvas img{
   max-width: none;
 }
 

@@ -6,11 +6,11 @@
       <header class="profile">
         <h2><?php echo $ad['title']; ?></h2>
         <h4>
-          <a href="#"><?php echo $region_name;?></a>
+          <a title='Lookup houses in <?php echo $region_name;?>' href="<?php echo base_url().'ads?region='.$ad['region'];?>"><?php echo $region_name;?></a>
           <i class="fa fa-angle-right small"></i>
-          <a href="#"><?php echo $area_name;?></a>
+          <a title='Lookup houses in <?php echo $area_name;?>' href="<?php echo base_url().'ads?area='.$ad['area'];?>"><?php echo $area_name;?></a>
           <i class="fa fa-angle-right small"></i>
-          <a href="#"><?php echo $neigh_name;?></a>
+          <a title='Lookup houses in <?php echo $neigh_name;?>' href="<?php echo base_url().'ads?nei='.$ad['neigh'];?>"><?php echo $neigh_name;?></a>
         </h4>
 
 
@@ -315,12 +315,12 @@
 
       <div class="col-md-4">
         <div class="pricetag row">
-          <h2><sup>৳</sup><?php echo $ad['rent'];?>
+          <h2><sup>৳</sup><?php echo number_format($ad['rent'],0,"",",");?>
             <span>/mo</span>
           </h2>
         </div>
 
-        <h3 class="text-center"><?php echo $ad['sqft'];?><small> sqft @ </small><sup>৳</sup><?php echo (floor($ad['rent']*100/$ad['sqft']))/100;?><small>/sqft</small></h3>
+        <h3 class="text-center"><?php echo number_format($ad['sqft'],0,"",",");?><small> sqft @ </small><sup>৳</sup><?php echo (floor($ad['rent']*100/$ad['sqft']))/100;?><small>/sqft</small></h3>
 
         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped">
           <tbody>
@@ -346,7 +346,7 @@
 
           <h2>Location</h2>
           <div class="adlocation row">
-            <a data-toggle="modal" data-target="#mapModal" ><img class="imgmap" src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo $ad['lat'], ',', $ad['lng'];?>&zoom=16&size=500x300&sensor=false&&markers=color:red%7Clabel:A%7C<?php echo $ad['lat'], ',', $ad['lng'];?>"></a>
+            <a data-toggle="modal" data-target="#mapModal" ><img title='Click to enlarge' class="imgmap" src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo $ad['lat'], ',', $ad['lng'];?>&zoom=16&size=500x300&sensor=false&&markers=color:red%7Clabel:A%7C<?php echo $ad['lat'], ',', $ad['lng'];?>"></a>
           </div>
 
           <h2>Nearby Houses</h2>

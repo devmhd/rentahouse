@@ -307,6 +307,16 @@ $(document).ready(function(){
   });
 
 
+  $('#availableDate').popover({
+
+    title: "Hey there",
+    content: "Please note that your ad will not be visible after this date (assuming it would have been rented by then). To make it visible again, edit the ad and extend this date.",
+    trigger: 'hover',
+    container: 'body'
+
+  });
+
+
   interactiveMap();
 
   enableValidation();

@@ -34,6 +34,13 @@ class Ad extends CI_Model{
 
     }
 
+    function getByOwner($id){
+
+        $query = $this->db->query("SELECT title,slug FROM ad WHERE owner = ?", array($id));
+        return $this->arrayfy($query->result());
+       
+    }
+
     function insert($post_arr){
 
         $arr = $post_arr;
@@ -53,7 +60,7 @@ class Ad extends CI_Model{
 
         $data = array(
             'photos' => $photos
-         );
+            );
 
         $this->db->where('slug', $ad_slug);
         $this->db->update('ad', $data); 

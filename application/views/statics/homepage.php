@@ -8,7 +8,7 @@
         <h1>Find your home from a listing of over 1,000,000 houses</h1>
 
         <p>
-          <a href="browse" class="btn btn-danger btn-lg"><i class="fa fa-search left"></i>Find a house &raquo;</a>
+          <a href="ads" class="btn btn-danger btn-lg"><i class="fa fa-search left"></i>Find a house &raquo;</a>
           <a href="newad" class="btn btn-danger btn-lg"><i class="fa fa-home left"></i>Rent your house &raquo;</a>
         </p>
 

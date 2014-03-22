@@ -48,8 +48,8 @@ echo form_open_multipart("handler/newad", array('id'=>'theForm'));
 
             </div>
 
-            <input class="disabled col-md-6" id='latInput' name='lat' type='text'>
-            <input class="disabled col-md-6" id='lngInput' name='lng' type='text'>
+            <input class="disabled col-md-6" id='latInput' name='lat' type='hidden'>
+            <input class="disabled col-md-6" id='lngInput' name='lng' type='hidden'>
           </div>
 
 
@@ -155,51 +155,7 @@ echo form_open_multipart("handler/newad", array('id'=>'theForm'));
         <!-- <div class="col-md-3"></div> -->
       </div>
 
-      <div class="formsection row">
-       <div class="col-md-12">
-        <h2>Add photos</h2>
-        <hr>
-
-
-        <div class="upload-gallery col-md-12">
-
-
-       <!--    <div class="upload-gallery-single row">
-            <div class="col-md-3">
-              <img id="thum" src="img/slide1.jpg">
-            </div>
-            <div class="col-md-9">
-              <textarea class="form-control" placeholder="Small description of the photo; eg. The spacious living room"></textarea>
-            </div>
-          </div> -->
-
-
-
-
-<!-- 
-          <div class="upload-gallery-single row">
-            <div class="col-md-3">
-              <img src="img/slide1.jpg">
-            </div>
-            <div class="col-md-9">
-              <textarea class="form-control" placeholder="Small description of the photo; eg. The spacious living room"></textarea>
-            </div>
-          </div> -->
-        </div>
-
-        <div class="col-md-12">
-          <div class="col-md-12">
- <!--          <label for="fileinput" class="col-md-6"> -->
-          <img id='addBtn' src="img/addBtn.png" alt="">
-   <!--        <input style="display:none" type="file" name="imgthumb" id="fileinput" class="form-control"/> -->
-        </label>
-            
-
-          </div>
-        </div>
-
-      </div>
-      </div>
+     
       <hr>
       <div class="formsection row">
         <div class="col-md-12">

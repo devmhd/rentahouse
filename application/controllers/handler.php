@@ -17,7 +17,7 @@ class Handler extends CI_Controller {
 	public function index()
 	{
 
-		redirect('/browse');
+		redirect(base_url().'ads');
 
 	}
 
@@ -73,11 +73,11 @@ class Handler extends CI_Controller {
 
 		$slug = $this->ad->insert($this->input->post());
 
-		// if($slug){
-		// 	redirect('/addphoto/'. $slug);
-		// }else{
-		// 	redirect('/newad?error=true');
-		// }
+		if($slug){
+			redirect('/addphoto/'. $slug);
+		}else{
+			redirect('/newad?error=true');
+		}
 
 	}
 
@@ -195,7 +195,7 @@ class Handler extends CI_Controller {
 		if($register)
 		{
 			$this->input->set_cookie(array('name'=>'loggedIn', 'value'=>$register, 'expire' => '86500'));
-			redirect('/browse');
+			redirect(base_url().'ads');
 		}	
 		else{
 			redirect('/register?error=true');
