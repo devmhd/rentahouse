@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 15, 2014 at 02:41 PM
+-- Generation Time: Mar 30, 2014 at 04:29 PM
 -- Server version: 5.6.12
 -- PHP Version: 5.5.3
 
@@ -52,23 +52,29 @@ CREATE TABLE IF NOT EXISTS `ad` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `photos` text COLLATE utf16_unicode_ci NOT NULL,
   `n_view` int(11) NOT NULL DEFAULT '0',
-  `visible` bit(1) NOT NULL DEFAULT b'0',
+  `visible` tinyint(1) NOT NULL DEFAULT '0',
   `real` bit(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci AUTO_INCREMENT=8 ;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `ad`
 --
 
 INSERT INTO `ad` (`id`, `slug`, `owner`, `title`, `address`, `region`, `area`, `neigh`, `lat`, `lng`, `n_bed`, `n_bath`, `n_living`, `n_balcony`, `n_dining`, `description`, `sqft`, `rent`, `availabledate`, `contactno`, `created`, `photos`, `n_view`, `visible`, `real`) VALUES
-(1, '19-a-north-madartek-for-rent', 0, '19/A North Madartek', 'Full address sucks', 2, 6, 45, 23.72909766983454, 90.38682818412781, 2, 4, 3, 4, 1, 'wow', 4556, 3453534, '2014-03-19', '0112345677', '2014-03-08 18:01:34', '', 0, b'0', b'0'),
-(2, '19-a-north-madartek-for-rent', 0, '19/A North Madartek', 'Full address sucks', 2, 6, 45, 23.72909766983454, 90.38682818412781, 2, 4, 3, 4, 1, 'wow', 4556, 3453534, '2014-03-19', '0112345677', '2014-03-09 11:24:25', '', 0, b'0', b'0'),
-(3, 'hola-senior-for-rent', 0, 'Hola Senior', '19/A North Madartek', 2, 6, 42, 23.72257582982215, 90.38893103599548, 1, 2, 1, 1, 2, '', 3444, 44000, '2014-03-08', '0112345677', '2014-03-09 11:31:04', '', 0, b'0', b'0'),
-(4, 'asdf-for-rent', 9, 'ASDF', '123/111 kalimuddi road', 2, 2, 113, 23.826944961312318, 90.39159178733826, 2, 2, 2, 2, 1, 'Nice description', 12345, 234444, '2014-03-19', '0112345677', '2014-03-13 15:50:43', '', 0, b'0', b'0'),
-(5, 'akkas-alir-basa-for-rent', 9, 'Akkas Alir Basa', 'Emavass', 2, 4, 80, 23.796948643125372, 90.41970133781433, 3, 2, 3, 5, 2, 'Desss', 5100, 12000, '2014-03-18', '0112345677', '2014-03-13 18:06:32', '', 0, b'0', b'0'),
-(6, '13-a-hhh-for-rent', 3, '13/A hhh', 'jsfdvnfgkjn', 2, 4, 76, 0, 0, 3, 1, 2, 4, 1, 'kjsdfn', 34535, 12345, '2014-03-11', '0112345677', '2014-03-15 06:29:27', '', 0, b'0', b'0'),
-(7, '13-a-hhh-for-rent', 3, '13/A hhh', 'jsfdvnfgkjn', 2, 4, 76, 0, 0, 3, 1, 2, 4, 1, 'kjsdfn', 34535, 12345, '2014-03-11', '0112345677', '2014-03-15 06:30:18', '', 0, b'0', b'0');
+(1, '19-a-north-madartek-for-rent', 5, '19/A North Madartek', 'Full address sucks', 2, 6, 45, 23.72909766983454, 90.38682818412781, 2, 4, 3, 4, 1, 'wow', 4556, 3453534, '2014-03-19', '0112345677', '2014-03-08 18:01:34', '', 0, 1, b'0'),
+(3, 'hola-senior-for-rent', 3, 'Hola Senior', '19/A North Madartek\nBasabor\nDhaka', 2, 6, 42, 23.72257582982215, 90.38893103599548, 1, 2, 3, 1, 2, '', 3444, 44000, '2014-03-21', '0112345677', '2014-03-09 11:31:04', '\n', 0, 1, b'0'),
+(4, 'asdf-for-rent', 9, 'ASDF', '123/111 kalimuddi road', 2, 2, 113, 23.826944961312318, 90.39159178733826, 2, 2, 2, 2, 1, 'Nice description', 12345, 234444, '2014-03-19', '0112345677', '2014-03-13 15:50:43', '', 0, 1, b'0'),
+(5, 'akkas-alir-basa-for-rent', 9, 'Akkas Alir Basa', 'Emavass', 2, 4, 80, 23.796948643125372, 90.41970133781433, 3, 2, 3, 5, 2, 'Desss', 5100, 12000, '2014-03-18', '0112345677', '2014-03-13 18:06:32', '', 0, 1, b'0'),
+(7, '13-a-hhh-for-rent', 3, '13/A hhh', 'jsfdvnfgkjn', 2, 4, 76, 23.8, 90.35, 3, 1, 2, 4, 1, 'kjsdfn', 34535, 12345, '2014-03-11', '0112345677', '2014-03-15 06:30:18', '', 0, 1, b'0'),
+(8, '18-a-north-madartek-for-rent', 3, '19/A North Madartek', '13/A Nobaber Gar\nNobabpur\nDhaka\nChittagong, Bangladesh', 2, 7, 93, 23.80933670615133, 90.34127354621887, 2, 3, 4, 5, 2, 'Woo Nice Place this one', 7777, 5656, '2014-04-01', '0112345677', '2014-03-15 18:03:15', '', 0, 1, b'0'),
+(10, 'humayun-road-for-rent', 11, 'Humayun Road', '3/11 Humayun Road\nMohammedpur 1213\nDhaka', 2, 8, 107, 23.76939274787799, 90.36652520298958, 3, 2, 1, 3, 1, 'Nice place', 2000, 20000, '2014-04-01', '01918161757', '2014-03-20 12:14:30', '', 0, 1, b'0'),
+(12, '13-a-ananda-bazar-for-rent', 3, '13/A Ananda Bazar', '13/A Ananda Bazar (2nd floor)\nSewrapara\nDhaka 1234', 2, 7, 98, 23.79256247532172, 90.37038087844849, 2, 3, 3, 5, 1, '', 1250, 15000, '2014-04-01', '0112345677', '2014-03-21 18:19:06', '[["7024dd1ac68e507bb06df7653481290b.jpg","Bedroom"],["d88ac725a0c95906db31c9c2b1573fb1.jpg","Kitchen"]]', 0, 1, b'0'),
+(13, '12-north-basabo-for-rent', 3, '12 North Basabo', '12 North Basabo\nSabujhbag \nDhaka 1223', 2, 5, 69, 23.74590365463322, 90.43605208396912, 3, 1, 1, 2, 1, 'desc', 1400, 20000, '2014-04-01', '0112345677', '2014-03-21 18:36:09', '[["b3e87f8bce03b1315321eb1945bfc3e9.jpg","asdfas"],["d4e89d9d040f6460d77e6a635df83c73.jpg","ghjrtfjngtfhntyj"]]', 0, 1, b'0'),
+(14, '12-shahid-sharani-for-rent', 12, '12 Shahid Sharani', '12 Shahid Sharani\nCMH Road, Cantonment,\nDhaka', 2, 2, 114, 23.81605050324914, 90.40002465248108, 3, 2, 1, 3, 1, 'Nice Place', 1300, 30000, '2014-05-01', '0112345677', '2014-03-22 03:01:03', '[["fefb51fc04f85d6920cdcb263ea1f34d.jpg","Lawn"],["9a671f7a5b8e825402ebc15090f7c335.jpg","Bedroom"],["1b6c8c3098be81512e5e7f537679abd4.jpg","Kitchen"]]', 0, 1, b'0'),
+(15, '45-lake-road-for-rent', 12, '45 Lake Road', '45 Lake Road,\nBanani\nDhaka 1234', 2, 4, 74, 23.783096565402815, 90.40715396404266, 4, 5, 2, 2, 2, '', 1600, 44000, '2014-05-01', '09876543', '2014-03-22 03:06:47', '[["c952c14af9a2a0048b2b789adf76e632.jpg","Living Room"],["aa21afb504e28351f0bf9c391d65755c.jpg","Exterior"]]', 1, 1, b'0'),
+(16, '13-3-gulshan-mosque-for-rent', 4, '13/3 Gulshan Mosque', '13/3 Embassy road\n(Opposite of the mosque)\nGulshan, Dhaka', 2, 4, 80, 23.797196023417268, 90.42319893836975, 3, 2, 3, 2, 1, 'Very close to the embassy. ', 1600, 45000, '2014-04-01', '0112345677', '2014-03-27 15:31:17', '[["19dd23c81f1e898284d2530bbd6a6845.jpg","Living Room"],["6e6c0907775bb4cf9fb34ab71a1d789c.jpg","Spacious Kitchen"]]', 0, 1, b'0');
 
 -- --------------------------------------------------------
 
@@ -102,6 +108,47 @@ INSERT INTO `area` (`id`, `name`, `lat`, `lng`, `region_id`) VALUES
 (10, 'Motijheel', 23.736940569227812, 90.4169904846192, 2),
 (11, 'Tejgaon', 23.769621459881172, 90.39072629394538, 2),
 (12, 'Uttara', 23.87703339137467, 90.39553281250006, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `erating`
+--
+
+CREATE TABLE IF NOT EXISTS `erating` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rater` int(11) NOT NULL,
+  `rater_name` varchar(50) COLLATE utf16_unicode_ci NOT NULL,
+  `rated` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `review` text COLLATE utf16_unicode_ci NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `erating`
+--
+
+INSERT INTO `erating` (`id`, `rater`, `rater_name`, `rated`, `rating`, `review`, `created`) VALUES
+(1, 4, 'AAA', 1, 4, 'Nice Electricity', '2014-03-28 09:07:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `grating`
+--
+
+CREATE TABLE IF NOT EXISTS `grating` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rater` int(11) NOT NULL,
+  `rater_name` varchar(50) COLLATE utf16_unicode_ci NOT NULL,
+  `rated` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `review` text COLLATE utf16_unicode_ci NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -247,6 +294,32 @@ INSERT INTO `neigh` (`id`, `name`, `lat`, `lng`, `area_id`, `region_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orating`
+--
+
+CREATE TABLE IF NOT EXISTS `orating` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rater` int(11) NOT NULL,
+  `rater_name` varchar(50) COLLATE utf16_unicode_ci NOT NULL,
+  `rated` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `review` text COLLATE utf16_unicode_ci NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `orating`
+--
+
+INSERT INTO `orating` (`id`, `rater`, `rater_name`, `rated`, `rating`, `review`, `created`) VALUES
+(1, 4, '', 16, 4, 'wow', '2014-03-28 05:30:25'),
+(2, 3, '', 1, 4, '', '2014-03-28 05:42:45'),
+(3, 4, 'AAA', 1, 5, 'Awsome House', '2014-03-28 06:19:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `region`
 --
 
@@ -340,24 +413,51 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(50) COLLATE utf16_unicode_ci NOT NULL,
   `password` varchar(50) COLLATE utf16_unicode_ci NOT NULL,
   `contact` varchar(50) COLLATE utf16_unicode_ci NOT NULL,
+  `is_mod` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `password`, `contact`) VALUES
-(1, 'asd', 'asd@gmail.com', 'fgh', '456787'),
-(2, 'qwe', 'qwe', 'rty', '09876'),
-(3, 'Mehedee', 'devmhd@gmail.com', '123456', '0987675'),
-(4, 'AAA', 'demo@example.com', '123456', 'BBB'),
-(5, 'qwqw', 'ashfaq.mostahid@yahoo.com', '123456', 'qwqw'),
-(6, 'aaa', 'asd@gmail.coma', 'aaa456', 'aaa'),
-(7, 'aaa', 'asd@gmail.comaa', '123456', 'aaa'),
-(8, 'aaa', 'asd@gmail.comaa', '123456', 'aaa'),
-(9, 'aaa', 'ashfaq.mostahid@yahoo.coma', 'aaaaaa', 'aaaaaaa'),
-(10, 'Modon Ali', 'devmhd@gmail.co', 'akkasali', '123456');
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `contact`, `is_mod`) VALUES
+(1, 'asd', 'asd@gmail.com', 'fgh', '456787', 0),
+(2, 'qwe', 'qwe', 'rty', '09876', 0),
+(3, 'Mehedee', 'devmhd@gmail.com', '123456', '0987675', 1),
+(4, 'AAA', 'demo@example.com', '123456', 'BBB', 0),
+(5, 'Ashfaq', 'ashfaq.mostahid@yahoo.com', '123456', 'qwqw', 0),
+(6, 'aaa', 'asd@gmail.coma', 'aaa456', 'aaa', 0),
+(7, 'aaa', 'asd@gmail.comaa', '123456', 'aaa', 0),
+(8, 'aaa', 'asd@gmail.comaa', '123456', 'aaa', 0),
+(9, 'aaa', 'ashfaq.mostahid@yahoo.coma', 'aaaaaa', 'aaaaaaa', 0),
+(10, 'Modon Ali', 'devmhd@gmail.co', 'akkasali', '123456', 0),
+(11, 'Akkas Ali', 'akkas@ak.assa', '123456', '1230987', 0),
+(12, 'Alam Khan', 'aaa@example.com', '123456', '89764322', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wrating`
+--
+
+CREATE TABLE IF NOT EXISTS `wrating` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `rater` int(11) NOT NULL,
+  `rater_name` varchar(50) COLLATE utf16_unicode_ci NOT NULL,
+  `rated` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `review` text COLLATE utf16_unicode_ci NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 COLLATE=utf16_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `wrating`
+--
+
+INSERT INTO `wrating` (`id`, `rater`, `rater_name`, `rated`, `rating`, `review`, `created`) VALUES
+(1, 3, '', 1, 5, '', '2014-03-28 06:33:04');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
