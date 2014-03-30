@@ -166,3 +166,10 @@ echo form_open_multipart("handler/newad", array('id'=>'theForm'));
       </div>
 
       </form>
+
+
+      <script>
+
+        var g_base_url = "<?php echo base_url();?>";
+
+      </script>

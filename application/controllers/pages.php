@@ -34,6 +34,50 @@ class Pages extends CI_Controller {
 
 	}
 
+	public function edit($slug){
+
+
+		$this->load->model('user');
+		$this->load->model('ad');
+		$this->load->model('region');
+		$this->load->helper('url');
+		$this->load->helper('html');
+		$this->load->helper('form');
+
+		$data['loggedIn'] = $this->input->cookie('loggedIn');
+
+		if($data['loggedIn'] && $data['loggedIn'] == $this->ad->getOwner($slug)){
+
+
+			$ad = $data['ad'] = $this->ad->getBySlug($slug);
+
+			$data['page_title'] = "Edit Ad"; // Capitalize the first letter
+			$data['page_slug'] = 'editad';
+
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
+			$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
+			$data['myAds'] = $this->ad->getByOwner($data['loggedIn']);
+
+
+			$data['regions'] = $this->region->getAllRegion();
+			$data['areas'] = $this->region->getAreaByRegion($ad['region']);
+			$data['neis'] = $this->region->getNeiByArea($ad['area']);
+
+
+			$this->load->view('templates/header', $data);
+			$this->load->view('statics/editad', $data);
+			$this->load->view('templates/footer', $data);
+
+
+
+		}else{
+
+			redirect(base_url().'ad/'.$slug);
+
+		}
+
+	}
+
 
 	public function index()
 	{

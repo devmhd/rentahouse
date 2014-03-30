@@ -8,7 +8,7 @@
         <script src="<?php echo base_url();?>js/main.js"></script>
         <?php
 
-        	if($page_slug == 'newad' || $page_slug == 'singlead' || $page_slug == 'mapads')
+        	if($page_slug == 'newad' || $page_slug == 'editad' || $page_slug == 'singlead' || $page_slug == 'mapads')
         		echo "<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyCvgZQ5HN2GV_e-yG-D0msw7A59R2si3zY&sensor=false'></script>";
 
         	if($page_slug == 'newad'){
@@ -16,6 +16,14 @@
                 echo "<script src='" . base_url() . "js/jquery.tooltipster.min.js'></script>";
                 echo "<script src='" . base_url() . "js/jquery.validate.min.js'></script>";
         		echo "<script src='" . base_url() . "js/newad.js'></script>";
+
+            }
+
+              if($page_slug == 'editad'){
+
+                echo "<script src='" . base_url() . "js/jquery.tooltipster.min.js'></script>";
+                echo "<script src='" . base_url() . "js/jquery.validate.min.js'></script>";
+            echo "<script src='" . base_url() . "js/editad.js'></script>";
 
             }
 

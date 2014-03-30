@@ -18,25 +18,26 @@
 <?php 
 
 
-if($loggedIn && $is_mod && $ad['visible']==0){
-  if($is_mod ){
+if($loggedIn){
 
+  echo "<div class='fixedbtnbar'>";
 
-
-
-    ?>
-
-    <div class='fixedbtnbar'>
-      <a href="<?php echo base_url().'approve/'.$ad['slug'];?>" class="btn btn-lg btn-info">Approve</a>
-      <a href="<?php echo base_url().'disapprove/'.$ad['slug'];?>" class="btn btn-lg btn-info">Disapprove</a>
-    </div>
-
-    <?php  
-
+  if($is_mod && $ad['visible']==0){
+    echo "<a href='".base_url().'approve/'.$ad['slug'] ."' class='btn btn-lg btn-info'>Approve</a>
+      <a href='".base_url().'disapprove/'.$ad['slug'] ."' class='btn btn-lg btn-info'>Disapprove</a>";
   }
+
+  if($loggedIn == $ad['owner']){
+    echo "<a href='".base_url().'edit/'.$ad['slug'] ."' class='btn btn-lg btn-info'>Edit this ad</a>"; 
+  }
+
+  echo "</div>";
 }
 
+
 ?>
+
+  
 
 <div class="page container">
   <div class="row">

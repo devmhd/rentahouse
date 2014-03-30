@@ -60,6 +60,7 @@ $route['pendingads'] = "searchcontrol/pendings";
 $route['search'] = "searchcontrol/search";
 
 $route['approve/(:any)'] = "pages/approve/$1";
+$route['edit/(:any)'] = "pages/edit/$1";
 
 $route['(:any)'] = "pages/$1";
 

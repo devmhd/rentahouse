@@ -80,6 +80,13 @@ class Ad extends CI_Model{
 
     }
 
+    function update($post_arr){
+
+        $this->db->where('slug', $post_arr['slug']);
+        $this->db->update('ad', $post_arr); 
+
+    }
+
     function updatePhotos($photos, $ad_slug){
 
         $data = array(

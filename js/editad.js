@@ -91,11 +91,11 @@ var map;
 var marker;
 function initialize()
 {
-  var markerInitPos = new google.maps.LatLng(55.3, 44.5);
+  var markerInitPos = new google.maps.LatLng(g_lat, g_lng);
   var mapProp = {
     disableDoubleClickZoom: true,
-    center:new google.maps.LatLng(23.8, 90.2),
-    zoom:7,
+    center:new google.maps.LatLng(g_lat, g_lng),
+    zoom:16,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
   map=new google.maps.Map(document.getElementById("gmap_canvas"),mapProp);
@@ -193,99 +193,118 @@ function enableValidation(){
 
 }
 
+var g_districtArray;
+var g_areaArray;
+var g_neighArray;
+
 function interactiveMap(){
 
-  $.get(g_base_url + "service/districts", function(districtArray){
+   $.get(g_base_url + "service/districts", function(districtArray){
 
-    var html = "<option value='none'>Select Region</option>";
+    g_districtArray = districtArray;
+    console.log(g_districtArray);
 
-    $.each(districtArray, function (index, district){
-      html += "<option value='" + district.id + "'>" + district.name + "</option>";
+   });
+
+    $.get(g_base_url + "service/area/2", function(areaArray){
+
+    g_areaArray = areaArray;
+    console.log(g_areaArray);
+
+   });
+
+  //   var html = "<option value='none'>Select Region</option>";
+
+  //   $.each(districtArray, function (index, district){
+  //     html += "<option value='" + district.id + "'>" + district.name + "</option>";
+  //   });
+
+  //   $("#sel_region").html(html);
+
+
+
+
+
+  $("#sel_region").change(function(){
+
+    var region_id = $("#sel_region").val();
+
+    $.get(g_base_url + "service/area/" + region_id, function(areaArray){
+
+      g_areaArray = areaArray;
+      console.log(g_areaArray);
+      var html = "<option value='none'>Select Area</option>";
+
+      $.each(areaArray, function (index, area){
+        html += "<option value='" + area.id + "'>" + area.name + "</option>";
+      });
+
+      $("#sel_area").html(html);
+
     });
 
-    $("#sel_region").html(html);
+    $.each(g_districtArray, function (index, district){
+      if(district.id == region_id){
+
+
+        map.panTo(new google.maps.LatLng(parseFloat(district.lat), parseFloat(district.lng)));
+        map.setZoom(11);
+      }
+    });
+
+  });
 
 
 
 
+  $("#sel_area").change(function(){
+    var area_id = $("#sel_area").val();
 
-    $("#sel_region").change(function(){
+    $.get(g_base_url + "service/neighborhood/" + area_id, function(neighArray){
 
-      var region_id = $("#sel_region").val();
+      g_neighArray = neighArray;
+       console.log(g_neighArray);
 
-      $.get(g_base_url + "service/area/" + region_id, function(areaArray){
+      var html = "<option value='none'>Select Neighborhood</option>";
 
-        var html = "<option value='none'>Select Area</option>";
+      $.each(neighArray, function (index, neigh){
+        html += "<option value='" + neigh.id + "'>" + neigh.name + "</option>";
+      });
 
-        $.each(areaArray, function (index, area){
-          html += "<option value='" + area.id + "'>" + area.name + "</option>";
-        });
+      $("#sel_neigh").html(html);
 
-        $("#sel_area").html(html);
+    });
 
+    $.each(g_areaArray, function (index, area){
+      if(area.id == area_id){
 
-        $("#sel_area").change(function(){
-          var area_id = $("#sel_area").val();
-
-          $.get(g_base_url + "service/neighborhood/" + area_id, function(neighArray){
-
-            var html = "<option value='none'>Select Neighborhood</option>";
-
-            $.each(neighArray, function (index, neigh){
-              html += "<option value='" + neigh.id + "'>" + neigh.name + "</option>";
-            });
-
-            $("#sel_neigh").html(html);
-
-
-            $("#sel_neigh").change(function(){
-
-              var neigh_id = $("#sel_neigh").val();
-
-              $.each(neighArray, function (index, neigh){
-                if(neigh.id == neigh_id){
-
-                  console.log(neigh);
-                  map.panTo(new google.maps.LatLng(parseFloat(neigh.lat), parseFloat(neigh.lng)));
-                  map.setZoom(16);
-                }
-              });
-
-            });
+        console.log(area);
+        map.panTo(new google.maps.LatLng(parseFloat(area.lat), parseFloat(area.lng)));
+        map.setZoom(14);
+      }
+    });
 
 
 
-          });
-
-          $.each(areaArray, function (index, area){
-            if(area.id == area_id){
-
-              console.log(area);
-              map.panTo(new google.maps.LatLng(parseFloat(area.lat), parseFloat(area.lng)));
-              map.setZoom(14);
-            }
-          });
+  });
 
 
+  $("#sel_neigh").change(function(){
 
-        });
+    var neigh_id = $("#sel_neigh").val();
 
+    $.each(g_neighArray, function (index, neigh){
+      if(neigh.id == neigh_id){
 
+        console.log(neigh);
+        map.panTo(new google.maps.LatLng(parseFloat(neigh.lat), parseFloat(neigh.lng)));
+        map.setZoom(16);
+      }
+    });
 
-});
+  });
 
-$.each(districtArray, function (index, district){
-  if(district.id == region_id){
-
-
-    map.panTo(new google.maps.LatLng(parseFloat(district.lat), parseFloat(district.lng)));
-    map.setZoom(11);
-  }
-});
-
-});
-
-});
+//});
 
 }
 
