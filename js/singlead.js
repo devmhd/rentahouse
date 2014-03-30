@@ -56,27 +56,43 @@ function printPage(){
     	$("button").tooltip();
 
     	$('#orating').raty({ 
-    		score: 3,
+    		score: g_orating,
     		starOn: "../star-on.png",
-    		starOff: "../star-off.png"
-    	});
+    		starOff: "../star-off.png",
+            starHalf: "../star-half.png",
+            click: function(score, evt) {
+               $('#oratinginput').val(score);
+            }
+        });
 
     	$('#wrating').raty({ 
-    		score: 5,
+    		score: g_wrating,
     		starOn: "../star-on.png",
-    		starOff: "../star-off.png"
+            starHalf: "../star-half.png",
+    		starOff: "../star-off.png",
+             click: function(score, evt) {
+               $('#wratinginput').val(score);
+            }
     	});
 
     	$('#erating').raty({ 
-    		score: 3,
+    		score: g_erating,
     		starOn: "../star-on.png",
-    		starOff: "../star-off.png"
+            starHalf: "../star-half.png",
+    		starOff: "../star-off.png",
+            click: function(score, evt) {
+               $('#eratinginput').val(score);
+            }
     	});
 
     	$('#grating').raty({ 
-    		score: 4,
+    		score: g_grating,
     		starOn: "../star-on.png",
-    		starOff: "../star-off.png"
+            starHalf: "../star-half.png",
+    		starOff: "../star-off.png",
+             click: function(score, evt) {
+               $('#gratinginput').val(score);
+            }
     	});
 
     	$('#contactBtn').click(function(){

@@ -59,6 +59,10 @@
                   <ul class="nav navbar-nav">
                     <li <?php echo $page_slug=='browse'?"class='active'":"";?> ><a href="<?php echo base_url();?>ads">Browse Ads</a></li>
 
+                    <?php if($loggedIn && $is_mod){ ?>
+                    <li <?php echo $page_slug=='pendings'?"class='active'":"";?> ><a href="<?php echo base_url();?>pendingads">Pending Ads</a></li>
+                    <?php }?>
+
                     <?php if($loggedIn){ ?>
                     <li <?php echo $page_slug=='newad'?"class='active'":"";?> ><a href="<?php echo base_url();?>newad">New Ad</a></li>
                     <?php } ?>
@@ -75,10 +79,10 @@
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Ads <b class="caret"></b></a>
                           <ul class="dropdown-menu">
-                          <?php foreach($myAds as $ad){
+                            <?php foreach($myAds as $ad){
 
-                            printf("<li><a href='%s'>%s</a></li>", base_url().'ad/'.$ad['slug'], $ad['title']);
-                            
+                              printf("<li><a href='%s'>%s</a></li>", base_url().'ad/'.$ad['slug'], $ad['title']);
+
                             }?>
 
                           </ul>
@@ -92,7 +96,7 @@
                       ?>
 
 
-                      <li class="dropdown">
+                    <!--   <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Ads <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li><a href="singlead.html">Ad 1</a></li>
@@ -100,7 +104,7 @@
                           <li><a href="singlead.html">Ad 3</a></li>
 
                         </ul>
-                      </li>
+                      </li> -->
 
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $loggedUser;?> <b class="caret"></b></a>

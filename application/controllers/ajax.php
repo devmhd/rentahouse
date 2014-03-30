@@ -66,4 +66,51 @@ class Ajax extends CI_Controller {
 		
 
 	}
+
+
+	public function submitrating(){
+
+
+//		print_r($_POST);
+
+		$this->load->helper('url');
+		$this->load->model('user');
+
+		$loggedIn = $this->input->cookie('loggedIn');
+
+
+		$slug = $this->input->post('slug');
+
+		if($loggedIn){
+
+			$data['rated'] = $this->input->post('rated');
+			$data['review']  = $this->input->post('review');
+			$data['rating'] = $this->input->post('rating'); 
+			$data['rater'] = $loggedIn; 
+			$data['rater_name'] = $this->user->getUserName($loggedIn);
+
+			$slug = $this->input->post('slug');
+
+			$table = $this->input->post('table');
+			if($data['rated'] && $data['rating']){
+
+				$this->load->model('rating');
+				$this->rating->insertRating($table, $data);
+
+
+
+
+			}
+
+
+
+
+		}
+
+		redirect(base_url()."ad/".$slug);
+
+		
+
+
+	}
 }

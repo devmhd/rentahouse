@@ -9,6 +9,18 @@ class User extends CI_Model{
         $this->load->database();
     }
 
+    function isModerator($id){
+
+        $query = $this->db->query("SELECT is_mod FROM user WHERE id=? LIMIT 1", array($id));
+
+        $res = $query->result();
+
+        $res = $this->arrayfy($res);
+
+        return ($res[0]['is_mod'] == 1);
+
+    }
+
     function checkEmail($email){
 
     	$query = $this->db->query("SELECT email FROM user WHERE email=?", array($email));
@@ -26,7 +38,7 @@ class User extends CI_Model{
 
     function verifyLogin($email, $pass){
 
-        echo $email, $pass;
+ //       echo $email, $pass;
 
         $query = $this->db->query("SELECT password,id FROM user WHERE email=?", array($email));
 

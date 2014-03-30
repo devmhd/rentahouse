@@ -23,6 +23,24 @@ class Ad extends CI_Model{
 
     }
 
+    function approveAd($slug){
+
+        $query = $this->db->query("UPDATE ad SET visible=1 WHERE slug=?", array($slug));
+
+ //       $query->result();
+    }
+
+    function getNearbyHouses($lat, $lng, $count){
+
+        $query = $this->db->query(" SELECT slug,rent,sqft,n_bed,n_bath,photos,neigh,area,lat,lng,SQRT( POW(69.1 * (lat - $lat), 2) + POW(69.1 * ($lng - lng) * COS(lat / 57.3), 2)) AS distance FROM ad ORDER BY distance LIMIT ?", array($count));
+
+        return $this->arrayfy($query->result());
+    }   
+
+
+
+ //   function getNearest($)
+
     function getAll(){
 
     	$query = $this->db->query("SELECT * FROM ad WHERE 1 ORDER BY created DESC");
@@ -34,11 +52,17 @@ class Ad extends CI_Model{
 
     }
 
+    function getAllPendings(){
+
+        $query = $this->db->query("SELECT slug,title,rent,sqft,n_bed,n_bath,area,neigh,region,photos,lat,lng FROM ad WHERE visible = 0");
+        return $this->arrayfy($query->result());
+    }
+
     function getByOwner($id){
 
         $query = $this->db->query("SELECT title,slug FROM ad WHERE owner = ?", array($id));
         return $this->arrayfy($query->result());
-       
+
     }
 
     function insert($post_arr){

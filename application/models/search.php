@@ -13,7 +13,7 @@ class Search extends CI_Model{
     
     function customSearch($params, $page){
 
-        $whereClause = " WHERE 1";
+        $whereClause = " WHERE visible=1";
 
         if($params['htype'] == 'region')
             $whereClause .= " AND region = " . $params['hval'];
@@ -42,8 +42,7 @@ class Search extends CI_Model{
         $whereClause .= " AND rent >= " . $params['minrent'];
         $whereClause .= " AND rent <= " . $params['maxrent'];
 
-        $sql = "SELECT slug,title,rent,sqft,n_bed,n_bath,area,neigh,region,photos,lat,lng FROM ad" . $whereClause;
-
+        $sql = "SELECT slug,title,rent,sqft,n_bed,n_bath,area,neigh,region,photos,lat,lng FROM ad " . $whereClause;
         //echo $sql;
 
 

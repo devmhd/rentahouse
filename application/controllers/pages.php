@@ -8,6 +8,33 @@ class Pages extends CI_Controller {
 	}
 
 
+	public function approve($slug){
+
+
+		$this->load->model('user');
+		$this->load->model('ad');
+		$this->load->helper('url');
+
+		$data['loggedIn'] = $this->input->cookie('loggedIn');
+		if($data['loggedIn']){
+
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
+			$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
+
+			$data['myAds'] = $this->ad->getByOwner($data['loggedIn']);
+		}
+
+
+
+		$this->load->model('ad');
+
+		$this->ad->approveAd($slug);
+
+		redirect(base_url().'ad/'.$slug);
+
+	}
+
+
 	public function index()
 	{
 
@@ -21,6 +48,8 @@ class Pages extends CI_Controller {
 
 		$data['loggedIn'] = $this->input->cookie('loggedIn');
 		if($data['loggedIn']){
+
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
 			$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
 
 			$data['myAds'] = $this->ad->getByOwner($data['loggedIn']);
@@ -55,7 +84,7 @@ class Pages extends CI_Controller {
 			$data['page_slug'] = 'newad';
 			$data['loggedUser'] = $this->user->getUserName($loggedIn);
 			$data['loggedIn'] = $loggedIn;
-
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
 
 			$data['myAds'] = $this->ad->getByOwner($data['loggedIn']);
 			$this->load->view('templates/header', $data);
@@ -92,6 +121,7 @@ class Pages extends CI_Controller {
 				$data['loggedIn'] = $loggedIn;
 				if($data['loggedIn']){
 					$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
+					$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
 				}
 
 				$data['myAds'] = $this->ad->getByOwner($data['loggedIn']);
@@ -128,6 +158,7 @@ class Pages extends CI_Controller {
 		if($data['loggedIn']){
 			$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
 			$data['myAds'] = $this->ad->getByOwner($data['loggedIn']);
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
 		}
 
 		$this->load->view('templates/header', $data);
@@ -152,6 +183,8 @@ class Pages extends CI_Controller {
 		$data['required'] = ($this->input->get('required'))=='true';
 		$data['loggedIn'] = $this->input->cookie('loggedIn');
 		if($data['loggedIn']){
+
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
 			$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
 		}
 

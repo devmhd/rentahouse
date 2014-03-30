@@ -11,8 +11,8 @@ class Searchcontrol extends CI_Controller {
 
 	public function search(){
 
-		 $this->load->helper('html');
-		 $this->load->helper('url');
+		$this->load->helper('html');
+		$this->load->helper('url');
 		// $this->load->helper('form');
 		$this->load->model('user');
 		$this->load->model('ad');
@@ -23,6 +23,8 @@ class Searchcontrol extends CI_Controller {
 
 		$data['loggedIn'] = $this->input->cookie('loggedIn');
 		if($data['loggedIn']){
+
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
 			$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
 		}
 
@@ -37,8 +39,8 @@ class Searchcontrol extends CI_Controller {
 	public function ads()
 	{
 
-		 $this->load->helper('html');
-		 $this->load->helper('url');
+		$this->load->helper('html');
+		$this->load->helper('url');
 
 		$this->load->model('search');
 		$this->load->model('user');
@@ -108,7 +110,7 @@ class Searchcontrol extends CI_Controller {
 		$stuffedresult['ads'] = $this->stuffLocalNames($result['ads']);
 
 
-	
+
 		
 
 		$data['page_title'] = "Search Results"; // Capitalize the first letter
@@ -117,6 +119,7 @@ class Searchcontrol extends CI_Controller {
 		$data['loggedIn'] = $this->input->cookie('loggedIn');
 		if($data['loggedIn']){
 			$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
 		}
 
 
@@ -140,8 +143,8 @@ class Searchcontrol extends CI_Controller {
 	public function mapads()
 	{
 
-		 $this->load->helper('html');
-		 $this->load->helper('url');
+		$this->load->helper('html');
+		$this->load->helper('url');
 
 		$this->load->model('search');
 		$this->load->model('user');
@@ -216,6 +219,8 @@ class Searchcontrol extends CI_Controller {
 
 		$data['loggedIn'] = $this->input->cookie('loggedIn');
 		if($data['loggedIn']){
+
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
 			$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
 		}
 
@@ -226,13 +231,63 @@ class Searchcontrol extends CI_Controller {
 		$this->load->view('templates/mapresults', $stuffedresult);
 		$this->load->view('templates/footer', $data);
 
+	}
 
 
 
+
+	public function pendings()
+	{
+
+		$this->load->helper('html');
+		$this->load->helper('url');
+
+		$this->load->model('search');
+		$this->load->model('user');
+		$this->load->model('ad');
+
+
+		$data['loggedIn'] = $this->input->cookie('loggedIn');
+		if(!($data['loggedIn'])){
+
+
+
+			redirect(base_url().'ads');
+
+			return;
+
+		}
+
+		if(!($this->user->isModerator($data['loggedIn']))){
+
+			redirect(base_url().'ads');
+
+			return;
+
+		}
+//		$page = ($this->input->get('p'))?($this->input->get('p')):'1';
 
 
 		
 
+		$result['ads'] = $this->ad->getAllPendings();
+
+		$stuffedresult['ads'] = $this->stuffLocalNames($result['ads']);
+
+		$data['page_title'] = "Pending Ads"; // Capitalize the first letter
+		$data['page_slug'] = 'pendings';
+
+		$data['loggedIn'] = $this->input->cookie('loggedIn');
+		if($data['loggedIn']){
+			$data['loggedUser'] = $this->user->getUserName($data['loggedIn']);
+			$data['is_mod'] = $this->user->isModerator($data['loggedIn']);
+		}
+
+
+		$data['myAds'] = $this->ad->getByOwner($data['loggedIn']);
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/pendings', $stuffedresult);
+		$this->load->view('templates/footer', $data);
 
 	}
 

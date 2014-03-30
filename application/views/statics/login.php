@@ -39,7 +39,7 @@
    		<div class="bottompanel">
    			<a class="btn btn-lg btn-info" value='I am new' href='<?php echo base_url();?>register'>I am new</a>
    			<input class="btn btn-lg btn-info" value='Login' type='submit' /><br>
-   			<a href="#">Forgot Password?</a>
+   		<!-- 	<a href="#">Forgot Password?</a> -->
 
 
 

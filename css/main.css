@@ -44,7 +44,7 @@
 
   body{
 
-   // font-family: MerriSansLight, sans-serif;
+   font-family: OpenSans, sans-serif;
    padding-top: 48px;
    padding-bottom: 100px;
    background-color: #eddbe5;
@@ -153,6 +153,10 @@ big{
 
 .homepage.jumbotron p{
   margin-top: 50px;
+}
+
+.media{
+  margin-top: 25px;
 }
 
 i.fa{
@@ -392,6 +396,8 @@ img.media-object{
 
 .comments{
   margin-top: 20px;
+  height: 280px;
+  overflow: scroll;
 }
 
 .comment{
@@ -481,4 +487,22 @@ img.just-uploaded{
 
 #mapModal .modal-footer{
   margin-top: 0;
+}
+
+.fixedbtnbar{
+  /* width: 400px; */
+  display: inline-block;
+  margin: 0 auto;
+  position: fixed;
+  /* background: #eee; */
+  z-index: 2000;
+  right: 462px;
+  margin-top: -8px;
+}
+
+i.fa.quote{
+  color: #999;
+  margin-right: 10px;
+  line-height: 26px;
+  font-size: 1.9em;
 }

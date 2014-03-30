@@ -56,8 +56,10 @@ $route['addphoto/(:any)'] = "pages/addphotos/$1";
 
 $route['ads'] = "searchcontrol/ads";
 $route['mapads'] = "searchcontrol/mapads";
-
+$route['pendingads'] = "searchcontrol/pendings";
 $route['search'] = "searchcontrol/search";
+
+$route['approve/(:any)'] = "pages/approve/$1";
 
 $route['(:any)'] = "pages/$1";
 
